@@ -1,3 +1,4 @@
+from functools import wraps
 # What is a Decorator?
 # A decorator is a function (or sometimes a class) that takes another function as an argument and enhances its behavior. Think of it as a wrapper that adds functionality before or after the original function executes, all while keeping the original code intact.
 
@@ -97,5 +98,119 @@
 # greet("Alice")
 
 # _____________________________________________________________
-# Decorator Syntax
+# Decorators with Arguments (Decorator Factory)
+# _____________________________________________________________
+
+# from functools import wraps
+# def repeat(n):
+#     def decorator(func):
+#         @wraps(func)
+#         def wrapper(*args, **kwargs):
+#             for _ in range(n):
+#                 result = func(*args, **kwargs)
+#             return result
+#         return wrapper
+#     return decorator
+
+# @repeat(5)
+# def say_hello():
+#     print("Hello!")
+
+# say_hello()
+
+# _____________________________________________________________
+# Chaining Decorators
+# _____________________________________________________________
+
+# def decorator1(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         print("Decorator 1")
+#         return func(*args, **kwargs)
+#     return wrapper
+
+# def decorator2(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         print("Decorator 2")
+#         return func(*args, **kwargs)
+#     return wrapper
+
+# @decorator1
+# @decorator2
+# def say_hello():
+#     print("Hello!")
+
+# say_hello()
+
+# _____________________________________________________________
+# _____________________________________________________________
+# _____________________________________________________________
+# Real World Examples
+# _____________________________________________________________
+# _____________________________________________________________
+# _____________________________________________________________
+
+
+# 1) Logging Decorator
+# _____________________________________________________________
+
+# def log(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         print(f"Calling {func.__name__} with args: {args}, kwargs: {kwargs}")
+#         return func(*args, **kwargs)
+#     return wrapper
+
+# @log
+# def add(a, b):
+#     return a + b
+
+# result = add(3, 5)
+# print(result)
+
+# 2) Timing Decorator
+# _____________________________________________________________
+
+# import time
+
+# def timer(func):
+#     @wraps(func)
+#     def wrapper(*args, **kwargs):
+#         start = time.time()
+#         result = func(*args, **kwargs)
+#         end = time.time()
+#         print(f"{func.__name__} took {end - start:.4f} seconds")
+#         return result
+#     return wrapper
+
+# @timer
+# def slow_function():
+#     time.sleep(5)
+
+# slow_function()
+
+# 3) Authentication Decorator
+# _____________________________________________________________
+
+# def requires_auth(func):
+#     @wraps(func)
+#     def wrapper(user, *args, **kwargs):
+#         if not user.get('is_authenticated'):
+#             raise PermissionError("Authentication required")
+#         return func(user, *args, **kwargs)
+#     return wrapper
+
+# @requires_auth
+# def secret_function(user):
+#     print("This is a secret function.")
+
+# user = {'is_authenticated': True}
+# secret_function(user)
+
+# user = {'is_authenticated': False}
+# try:
+#     secret_function(user)
+# except PermissionError as e:
+#     print(e)
 # _____________________________________________________________
