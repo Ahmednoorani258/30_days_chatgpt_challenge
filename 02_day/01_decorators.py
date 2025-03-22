@@ -1,4 +1,8 @@
 from functools import wraps
+
+# to check the output of specific example pls uncomment the code and run it
+# _____________________________________________________________
+
 # What is a Decorator?
 # A decorator is a function (or sometimes a class) that takes another function as an argument and enhances its behavior. Think of it as a wrapper that adds functionality before or after the original function executes, all while keeping the original code intact.
 
