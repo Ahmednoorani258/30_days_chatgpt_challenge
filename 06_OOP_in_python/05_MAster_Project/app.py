@@ -47,7 +47,7 @@ class CurrentAccount(Bank_Account):
     def calculate_interest(self):
         return self._balance * 0.01  # 1% Interest Rate
 
-# Employee Class
+# Employee Class.
 class Employee:
     def __init__(self, name, age, job_title, salary, bank_account):
         self.name = name
