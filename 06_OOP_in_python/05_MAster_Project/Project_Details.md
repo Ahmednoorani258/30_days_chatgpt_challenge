@@ -67,3 +67,8 @@ You're building a **Bank & Employee Management System** where:
 ## 💡 Expected Example Output:
 
 ### Employee Details:
+
+
+John Doe (Software Engineer) - Salary: $5000 Bank Balance: $2000 Interest Earned: $100.0
+
+Jane Smith (Manager) - Department: IT - Salary: $8000 Bank Balance: $5000 Interest Earned: $250.0
