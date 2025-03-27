@@ -12,6 +12,8 @@ The original scraper fetches data from multiple URLs sequentially using the `req
 ```python
 import requests
 import time
+"""
+
 
 start = time.time()
 urls = ["https://example.com", "https://example.org"]
@@ -20,6 +22,8 @@ for url in urls:
     print(f"Fetched {len(response.text)} characters from {url}")
 print("Time:", time.time() - start)
 
+
+"""
 # 📌 6. Bonus Challenge (Optional): Refactor a Synchronous Scraper
 
 
