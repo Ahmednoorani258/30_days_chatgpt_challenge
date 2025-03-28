@@ -48,10 +48,6 @@ if scrape_button:
                             # Display category with item count
                             st.write(f"**{category.capitalize()} ({len(items)}):**")
                             if items:
-                                if category.lower() == 'images':
-                                # Display items as images
-                                    for item in items:
-                                        st.image(item, caption=item)
                                 # Make links clickable if category is 'links'
                                 if category.lower() == 'links':
                                     for item in items:
