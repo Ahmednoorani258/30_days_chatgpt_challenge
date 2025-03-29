@@ -80,7 +80,7 @@ if selected_ds == "Stack":
     # Display stack visually
     
 ## 🧠 Bonus Challenges (Optional)
-
+```
 Take your project to the next level by implementing these advanced features:
 1. **Dark Mode Toggle**:
    - Add a toggle button to switch between light and dark themes for better user experience.
