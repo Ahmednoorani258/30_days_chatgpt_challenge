@@ -88,7 +88,7 @@ if 'queue' not in st.session_state:
 if 'set' not in st.session_state:
     st.session_state.set = MySet()
 if 'dict' not in st.session_state:
-    st.session_state.dict = MyDict()
+    st.session_state.dictionary = MyDict()
 
 # Data structure selection in sidebar
 data_structures = ["List", "Stack", "Queue", "Set", "Dictionary"]
@@ -475,7 +475,27 @@ elif selected_ds == "Queue":
 
 elif selected_ds == "Set":
     ds = st.session_state.set
-    methods = ["add", "remove", "contains", "reset"]
+    methods = [
+    "add",  # Adds an element to the set
+    "remove",  # Removes an element from the set
+    "discard",  # Removes an element from the set without raising an error if it doesn't exist
+    "contains",  # Checks if an element exists in the set
+    "clear",  # Removes all elements from the set
+    "pop",  # Removes and returns an arbitrary element from the set
+    "copy",  # Creates a shallow copy of the set
+    "union",  # Returns a new set with all elements from both sets
+    "update",  # Adds elements from another set or iterable
+    "intersection",  # Returns a new set with elements common to both sets
+    "intersection_update",  # Updates the set with the intersection of itself and another
+    "difference",  # Returns a new set with elements in the set but not in another
+    "difference_update",  # Updates the set by removing elements found in another set
+    "symmetric_difference",  # Returns a new set with elements in either set but not in both
+    "symmetric_difference_update",  # Updates the set with the symmetric difference of itself and another
+    "is_subset",  # Checks if the set is a subset of another
+    "is_superset",  # Checks if the set is a superset of another
+    "isdisjoint",  # Checks if two sets have no elements in common
+    "reset"  # Resets the set to an empty state
+]
     method = st.selectbox("Select Method", methods)
     code_snippets = set_code_snippets
     complexity = set_complexity
@@ -620,11 +640,23 @@ elif selected_ds == "Set":
     st.write("Current Set State:", ds.get_state())
 
 elif selected_ds == "Dictionary":
-    ds = st.session_state.dict
-    methods = ["set", "get", "remove", "reset"]
+    ds = st.session_state.dictionary  # Ensure the dictionary object is initialized in session_state
+    methods = [
+        "set",  # Sets a key-value pair in the dictionary
+        "get",  # Retrieves the value associated with a key
+        "remove",  # Removes a key-value pair from the dictionary
+        "clear",  # Removes all key-value pairs from the dictionary
+        "keys",  # Returns a list of all keys in the dictionary
+        "values",  # Returns a list of all values in the dictionary
+        "items",  # Returns a list of all key-value pairs in the dictionary
+        "pop",  # Removes a key and returns its value
+        "popitem",  # Removes and returns the last inserted key-value pair
+        "update",  # Updates the dictionary with another dictionary or iterable
+        "setdefault",  # Returns the value of a key if it exists, otherwise sets it to a default value
+    ]
     method = st.selectbox("Select Method", methods)
-    code_snippets = dict_code_snippets
-    complexity = dict_complexity
+    code_snippets = dict_code_snippets  # Dictionary containing code snippets for each method
+    complexity = dict_complexity  # Dictionary containing time complexities for each method
 
     if method == "set":
         col1, col2 = st.columns(2)
