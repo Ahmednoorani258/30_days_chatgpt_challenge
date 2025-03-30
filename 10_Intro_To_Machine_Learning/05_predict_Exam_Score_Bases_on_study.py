@@ -25,8 +25,8 @@ import pandas as pd
 
 np.random.seed(42)  # For reproducibility
 
-study_hours = np.random.randint(0, 10, 40 ) # 20 students, 1-10 hours
-exam_scores = study_hours * 9 + np.random.uniform(-10, 10, 40) # Score = 9 * hours + noise
+study_hours = np.random.randint(0, 10, 20 ) # 20 students, 1-10 hours
+exam_scores = study_hours * 9 + np.random.uniform(-10, 10, 20) # Score = 9 * hours + noise
 
 # print(study_hours)
 # print(exam_scores)
@@ -95,7 +95,7 @@ Keeps it basic while showing how to instantiate a model.
 from sklearn.model_selection import train_test_split
 
 # Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 # Train the model
 model.fit(X_train, y_train)
