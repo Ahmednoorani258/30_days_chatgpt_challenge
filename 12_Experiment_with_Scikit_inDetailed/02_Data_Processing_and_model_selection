@@ -1,0 +1,74 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.datasets import fetch_california_housing
+
+
+california = fetch_california_housing()
+df = pd.DataFrame(california.data, columns=california.feature_names)
+df['PRICE'] = california.target
+
+# Define features (X) and target (y)
+X = df.drop('PRICE', axis=1)
+y = df['PRICE']
+
+# Split into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Check the shapes
+print(f"Training set shape: {X_train.shape}")
+print(f"Testing set shape: {X_test.shape}")
+print(f"Testing set shape: {y_test.shape}")
+print(f"Testing set shape: {y_test.shape}")
+
+
+# Explanation
+# X: All columns except PRICE (features like MedInc, HouseAge).
+# y: The PRICE column (target variable).
+# train_test_split():
+# test_size=0.2: 20% of the data is reserved for testing, 80% for training.
+# random_state=42: Ensures reproducibility of the split.
+# Shapes: Confirms the split (e.g., 16,512 training rows, 4,128 testing rows for 20,640 total rows).
+
+# Example Output
+
+# Training set shape: (16512, 8)
+# Testing set shape: (4128, 8)
+
+# Optional Preprocessing: Features like Population (hundreds/thousands) and AveRooms (single digits) have different scales. You could standardize them using StandardScaler, but for simplicity with Linear Regression, we’ll proceed without scaling here.
+
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Display the learned coefficients
+print("Model Coefficients:")
+for feature, coef in zip(X.columns, model.coef_):
+    print(f"{feature}: {coef:.4f}")
+    
+    
+# Explanation
+# LinearRegression(): Creates a linear regression model that fits a line to the data.
+# fit(): Trains the model by finding the best coefficients (slopes) and intercept to minimize prediction error.
+# Coefficients: Show the weight of each feature in predicting PRICE.
+# Example Output
+#
+# Model Coefficients:
+# MedInc: 0.4487
+# HouseAge: 0.0097
+# AveRooms: -0.1073
+# AveBedrms: 0.6451
+# Population: -0.0000
+# AveOccup: -0.0038
+# Latitude: -0.4203
+# Longitude: -0.4336
+
+# Interpretation:
+# MedInc (0.4487): Higher median income strongly increases predicted price.
+# AveRooms (-0.1073): More rooms slightly decreases price (possibly due to correlation with other factors).
