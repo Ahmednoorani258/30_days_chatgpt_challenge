@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # load data
-df = pd.read_csv('Titanic-Dataset.csv')
+df = pd.read_csv('./Titanic-Dataset.csv')
 
 st.sidebar.title('Filters')
 pclass = st.sidebar.multiselect('Passenger Class',df['Pclass'].unique())
