@@ -3,8 +3,9 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 # load data
-df = pd.read_csv('./Titanic-Dataset.csv')
+df = pd.read_csv('11_ML_libs_and_Data_Visualization/04_data_viualization_dashboard/Titanic-Dataset.csv')
 
 st.sidebar.title('Filters')
 pclass = st.sidebar.multiselect('Passenger Class',df['Pclass'].unique())
