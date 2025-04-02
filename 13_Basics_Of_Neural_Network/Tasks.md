@@ -1,5 +1,9 @@
 **Note**: Today's task focuses on theory rather than practical implementation. If you don’t fully understand everything today, that’s completely normal! Many of these concepts will be revisited in the upcoming days with practical examples and tasks. For now, focus on understanding the basics and learning how to install TensorFlow.
 
+Youtube Video: https://www.youtube.com/watch?v=aircAruvnKk
+
+this video helps u understand neural network visually
+
 # 📌 Day 13: Basics of Neural Networks
 
 This guide outlines the tasks and concepts to focus on for Day 13, where you'll dive into the fundamentals of neural networks, their use cases, and advanced concepts. By the end of the day, you'll have a strong theoretical understanding and practical insights into neural networks.
