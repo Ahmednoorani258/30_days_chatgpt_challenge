@@ -1,0 +1,18 @@
+# 📊 Comparison Between Neural Networks (NN) and Deep Neural Networks (DNN)
+
+This table highlights the key differences between basic Neural Networks (NN) and Deep Neural Networks (DNN), focusing on their structure, complexity, applications, and more.
+
+| **Feature**            | **Neural Network (Basic)**                                                                 | **Deep Neural Network (DNN)**                                                                                   |
+|-------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **Definition**          | A model typically consisting of an input layer, an output layer, and possibly one hidden layer. | A neural network with multiple hidden layers, achieving greater "depth" for more complex learning.              |
+| **Structure**           | - Input Layer<br>- One (or two) hidden layers<br>- Output Layer                            | - Input Layer<br>- Multiple hidden layers (2 or more)<br>- Output Layer                                         |
+| **Number of Hidden Layers** | Usually 1 or 2 hidden layers.                                                           | 3 or more hidden layers (sometimes 10+ layers are used).                                                        |
+| **Complexity**          | Low complexity, simple architecture that captures basic non-linear relationships.           | High complexity, capable of extracting detailed patterns and features through multiple abstraction levels.       |
+| **Computational Cost**  | Requires less computation and memory; training is relatively fast.                          | Requires more computation, memory, and training time; often uses high-performance GPUs for training.            |
+| **Feature Extraction**  | Extracts only basic features; limited representation capacity.                              | Performs hierarchical feature extraction: lower layers learn simple features (e.g., edges), higher layers learn complex concepts. |
+| **Training Difficulty** | Easier to train with fewer parameters; gradient descent converges faster.                   | Training is more challenging due to issues like vanishing/exploding gradients; requires advanced techniques (e.g., batch normalization, dropout). |
+| **Learning Capability** | Limited learning capability; defines basic decision boundaries.                             | Advanced learning capability; defines complex, non-linear decision boundaries.                                  |
+| **Overfitting Issues**  | Lower risk of overfitting due to fewer parameters, but limited for complex data.            | Higher risk of overfitting due to a large number of parameters; requires regularization techniques.             |
+| **Applications**        | Simple classification, regression, basic pattern recognition, and small-scale problems.     | Advanced tasks like image recognition, natural language processing, speech recognition, and autonomous driving. |
+| **Scalability**         | Limited scalability; better suited for small datasets and less complex problems.            | Highly scalable; designed for large datasets and complex problems.                                              |
+| **Interpretability**    | Easier to interpret due to its simple architecture.                                         | Harder to interpret due to its "black box" nature; requires advanced methods for explanations and visualizations. |
