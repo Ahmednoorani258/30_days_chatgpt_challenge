@@ -58,8 +58,7 @@ Understand the fundamentals of **Reinforcement Learning (RL)** and explore how a
 
 ### ✅ Step 1: Watch RL Introductory Videos
 - Find beginner-friendly YouTube tutorials on Reinforcement Learning.
-- **Suggested**: David Silver’s RL Course by DeepMind.
-
+- **Suggested**: https://www.youtube.com/watch?v=nly5e2Fbs4M
 ### ✅ Step 2: Read RL Articles
 - Read blogs/articles explaining Q-Learning and Policy Gradient.
 - Find easy-to-follow reinforcement learning guides.
