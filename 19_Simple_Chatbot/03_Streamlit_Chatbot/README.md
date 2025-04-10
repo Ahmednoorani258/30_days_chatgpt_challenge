@@ -1,0 +1,1 @@
+<!-- all programs realted hugging face need tensorflow to run bcs it has models that work with tensorflow so u have to install tensr flow first -->

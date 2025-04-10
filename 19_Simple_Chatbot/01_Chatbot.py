@@ -83,7 +83,7 @@ def get_response(intent):
     "weather": "I can’t check the weather right now, but it’s always a good day to learn something new! 🌤️",
     "joke": "Why don’t scientists trust atoms? Because they make up everything! 😂",
     "unknown": "I’m not sure how to respond to that, but I’m here to help! 🤖"
-}
+    }
     # Pick the reply that matches the intent, or say something else if it’s confused
     return responses.get(intent.lower(), "Hmm, I don’t know what to say!")
 
