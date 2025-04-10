@@ -32,7 +32,10 @@ def generate_reply(user_input):
 
 # Step 3: Chatbot ko test karte hain
 # User se input lete hain
-you_say = input("What do you want to say? ")  # User se ek sentence ya question input karne ko kaha jata hai
+you_say = input("What do you want to say? ")
+reply = generate_reply(you_say)
+print("Bot says:", reply)
+# a question input karne ko kaha jata hai
 
 
 # What’s happening?
