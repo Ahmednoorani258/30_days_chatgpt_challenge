@@ -4,6 +4,7 @@ class Product:
         self.price = price
         self.quantity = quantity
 
+
 class Inventory:
     def __init__(self):
         self.products = []
@@ -31,6 +32,7 @@ class Inventory:
     def display_inventory(self):
         for p in self.products:
             print(f"Name: {p.name}, Price: ${p.price}, Quantity: {p.quantity}")
+
 
 # Test
 inv = Inventory()

@@ -1,5 +1,6 @@
 import aiohttp
 
+
 async def fetch_url(session, url):
     """Fetch HTML content from a URL asynchronously."""
     try:
@@ -12,7 +13,7 @@ async def fetch_url(session, url):
     except Exception as e:
         print(f"Error fetching {url}: {e}")
         return None
-    
+
 
 # Async Programming: async def defines an asynchronous function. await pauses execution until the I/O operation (HTTP request) completes.
 

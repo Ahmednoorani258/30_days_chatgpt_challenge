@@ -1,104 +1,108 @@
 from collections import deque
 
+
 class MyList:
     def __init__(self):
         self.items = []
-    
+
     def append(self, value):
         self.items.append(value)
         return True
-    
+
     def insert(self, index, value):
         if 0 <= index <= len(self.items):
             self.items.insert(index, value)
             return True
         return False
-    
+
     def remove(self, value):
         if value in self.items:
             self.items.remove(value)
             return True
         return False
-    
+
     def clear(self):
         self.items.clear()
-        
+
     def copy(self):
         return self.items.copy()
-    
+
     def count(self, value):
         return self.items.count(value)
-    
+
     def extend(self, iterable):
         self.items.extend(iterable)
-        
+
     def index(self, value):
         return self.items.index(value)
-    
+
     def pop(self):
         if self.items:
             return self.items.pop()
         return None
-    
+
     def reverse(self):
         self.items.reverse()
-        
+
     def sort(self):
         self.items.sort()
-    
+
     def get(self, index):
         if 0 <= index < len(self.items):
             return self.items[index]
         return None
-    
+
     def get_state(self):
         return self.items
+
 
 class Stack:
     def __init__(self):
         self.items = []
-    
+
     def push(self, value):
         self.items.append(value)
-    
+
     def pop(self):
         if not self.is_empty():
             return self.items.pop()
         return None
-    
+
     def peek(self):
         if not self.is_empty():
             return self.items[-1]
         return None
-    
+
     def is_empty(self):
         return len(self.items) == 0
-    
+
     def get_state(self):
         return self.items[::-1]  # Reverse for top-first display
+
 
 class Queue:
     def __init__(self):
         self.items = deque()
-    
+
     def enqueue(self, value):
         self.items.append(value)
-    
+
     def dequeue(self):
         if not self.is_empty():
             return self.items.popleft()
         return None
-    
+
     def peek(self):
         if not self.is_empty():
             return self.items[0]
         return None
-    
+
     def is_empty(self):
         return len(self.items) == 0
-    
+
     def get_state(self):
         return list(self.items)
+
 
 class MySet:
     def __init__(self):

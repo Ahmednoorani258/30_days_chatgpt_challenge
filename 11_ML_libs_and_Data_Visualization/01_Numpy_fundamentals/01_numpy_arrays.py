@@ -12,14 +12,13 @@ arr = np.random.rand(5)
 print("Array:", arr)
 
 
-# What’s Happening?: 
-# 
+# What’s Happening?:
+#
 # np.random.rand(5) generates an array of 5 random floating-point numbers between 0 and 1. Your output might look like [0.37454012, 0.95071431, 0.73199394, 0.59865848, 0.15601864].
 
 # Key Point:
-# 
+#
 # Arrays are homogeneous, meaning all elements must be of the same data type (e.g., all floats). This uniformity enables fast computations.
-
 
 
 # __________________________________________________________________

@@ -1,6 +1,6 @@
 # 📌 Abstraction
 """
-Abstraction hides complex details and shows only what’s necessary. In Python, this is done using abstract classes 
+Abstraction hides complex details and shows only what’s necessary. In Python, this is done using abstract classes
 that define methods child classes must implement.
 
 ### Key Points:
@@ -14,11 +14,12 @@ that define methods child classes must implement.
    - Python’s `abc` (Abstract Base Class) module is used to create abstract classes and methods.
 
 ### Example: Abstract Shape Class
-The `Shape` class is an abstract class with an abstract `area()` method. The `Circle` and `Square` classes inherit from `Shape` 
+The `Shape` class is an abstract class with an abstract `area()` method. The `Circle` and `Square` classes inherit from `Shape`
 and provide their own implementation of the `area()` method.
 """
 
 from abc import ABC, abstractmethod
+
 
 # Abstract Base Class
 class Shape(ABC):
@@ -27,6 +28,7 @@ class Shape(ABC):
         """Abstract method to calculate the area of a shape."""
         pass  # No implementation in the abstract class
 
+
 # Concrete Class: Circle
 class Circle(Shape):
     def __init__(self, radius):
@@ -34,7 +36,8 @@ class Circle(Shape):
 
     def area(self):
         """Implementation of the area method for a circle."""
-        return 3.14 * self.radius ** 2
+        return 3.14 * self.radius**2
+
 
 # Concrete Class: Square
 class Square(Shape):
@@ -43,7 +46,8 @@ class Square(Shape):
 
     def area(self):
         """Implementation of the area method for a square."""
-        return self.side ** 2
+        return self.side**2
+
 
 # Usage Example
 if __name__ == "__main__":

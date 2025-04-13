@@ -11,7 +11,7 @@ SECTION 1: Linear Regression on a Synthetic Dataset
     - Evaluating the model using cross-validation.
     - Hyperparameter tuning with GridSearchCV.
     - Saving and loading the model with joblib.
-    
+
 SECTION 2: House Price Prediction Example
     - Generating a synthetic dataset for predicting house prices.
     - Visualizing the actual vs. predicted prices.
@@ -25,15 +25,15 @@ SECTION 3: Data Scaling and Alternative Models
 NOTE:
     - Although the package is installed as "scikit‑learn", we import it as "sklearn".
     - This is the official import name and is not deprecated.
-    
+
 Enjoy the detailed examples and explanations in the comments!
 """
 
 # ============================
 # IMPORT NECESSARY PACKAGES
 # ============================
-import numpy as np          # For numerical operations
-import pandas as pd         # For DataFrame handling
+import numpy as np  # For numerical operations
+import pandas as pd  # For DataFrame handling
 import matplotlib.pyplot as plt  # For plotting
 
 # Import modules from scikit-learn
@@ -60,7 +60,9 @@ y = 4 + 3 * X[:, 0] + np.random.randn(100)
 
 # -- Splitting the Data --
 # We use an 80/20 split for training and testing.
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 print("SECTION 1: Linear Regression on Synthetic Data")
 print("Training size:", X_train.shape[0], "Test size:", X_test.shape[0])
 
@@ -77,18 +79,18 @@ print("Cross-Validation Score (Linear Regression): {:.4f}".format(cv_scores.mean
 
 # -- Hyperparameter Tuning --
 # Here we use GridSearchCV to determine whether including an intercept is beneficial.
-param_grid = {'fit_intercept': [True, False]}
+param_grid = {"fit_intercept": [True, False]}
 grid = GridSearchCV(LinearRegression(), param_grid, cv=5)
 grid.fit(X, y)
 print("Best parameters from GridSearchCV for Linear Regression:", grid.best_params_)
 
 # -- Model Persistence --
 # Save the trained model using joblib for later use (e.g., in a Flask application).
-joblib.dump(lin_reg, 'linear_model.pkl')
+joblib.dump(lin_reg, "linear_model.pkl")
 print("Linear Regression model saved as 'linear_model.pkl'.")
 
 # Load the model back from file to ensure it works.
-loaded_model = joblib.load('linear_model.pkl')
+loaded_model = joblib.load("linear_model.pkl")
 print("Loaded Linear Regression model from 'linear_model.pkl'.\n")
 
 # ============================
@@ -106,20 +108,25 @@ house_size = np.random.randint(1000, 3000, 50)
 house_price = house_size * 150 + np.random.randint(-20000, 20000, 50)
 
 # Create a DataFrame for better visualization and handling.
-df = pd.DataFrame({'Size': house_size, 'Price': house_price})
+df = pd.DataFrame({"Size": house_size, "Price": house_price})
 print("House Price Data (first 5 rows):\n", df.head(), "\n")
 
 # -- Define Features and Target --
 # X needs to be a 2D array, so we use double brackets.
-X_house = df[['Size']]
-y_house = df['Price']
+X_house = df[["Size"]]
+y_house = df["Price"]
 
 # -- Splitting the Data --
 # Split into training and testing sets (80/20 split).
 X_house_train, X_house_test, y_house_train, y_house_test = train_test_split(
-    X_house, y_house, test_size=0.2, random_state=42)
-print("House Price Prediction: Training size:", X_house_train.shape[0],
-      "Test size:", X_house_test.shape[0])
+    X_house, y_house, test_size=0.2, random_state=42
+)
+print(
+    "House Price Prediction: Training size:",
+    X_house_train.shape[0],
+    "Test size:",
+    X_house_test.shape[0],
+)
 
 # -- Model Training --
 # Train a Linear Regression model on the house data.
@@ -137,9 +144,9 @@ print("Mean Absolute Error (Linear Regression, House Prices): {:.2f}".format(mae
 # -- Plotting --
 # Visualize the relationship between actual and predicted house prices.
 plt.figure(figsize=(8, 6))
-plt.scatter(X_house_test, y_house_test, color='blue', label="Actual Prices")
+plt.scatter(X_house_test, y_house_test, color="blue", label="Actual Prices")
 # Note: Since X_house_test is 2D, plt.plot will plot the line by connecting points in order.
-plt.plot(X_house_test, predictions, color='red', linewidth=2, label="Predicted Prices")
+plt.plot(X_house_test, predictions, color="red", linewidth=2, label="Predicted Prices")
 plt.xlabel("House Size (sq ft)")
 plt.ylabel("House Price ($)")
 plt.title("Linear Regression: House Price Prediction")

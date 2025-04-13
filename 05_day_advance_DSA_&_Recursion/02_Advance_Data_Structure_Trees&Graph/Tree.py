@@ -1,6 +1,6 @@
 # 📌 Trees
 """
-A tree is a hierarchical data structure with nodes connected by edges. Each node has a parent (except the root) 
+A tree is a hierarchical data structure with nodes connected by edges. Each node has a parent (except the root)
 and zero or more children. A binary tree restricts each node to at most two children (left and right).
 """
 
@@ -10,11 +10,13 @@ and zero or more children. A binary tree restricts each node to at most two chil
 
 # Let’s define a simple binary tree in Python:
 
+
 class Node:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+
 
 # Create the binary tree
 root = Node(1)
@@ -48,6 +50,7 @@ Tree traversals visit all nodes in a specific order. Here are the three main rec
    - Visit the left subtree, then the right subtree, then the root.
 """
 
+
 # Inorder Traversal (Left, Root, Right)
 def inorder_traversal(node):
     if node:
@@ -55,10 +58,12 @@ def inorder_traversal(node):
         print(node.value, end=" ")
         inorder_traversal(node.right)
 
+
 print("Inorder Traversal:")
 inorder_traversal(root)  # Output: 4 2 5 1 3
 
 print("\n")
+
 
 # Preorder Traversal (Root, Left, Right)
 def preorder_traversal(node):
@@ -67,10 +72,12 @@ def preorder_traversal(node):
         preorder_traversal(node.left)
         preorder_traversal(node.right)
 
+
 print("Preorder Traversal:")
 preorder_traversal(root)  # Output: 1 2 4 5 3
 
 print("\n")
+
 
 # Postorder Traversal (Left, Right, Root)
 def postorder_traversal(node):
@@ -78,6 +85,7 @@ def postorder_traversal(node):
         postorder_traversal(node.left)
         postorder_traversal(node.right)
         print(node.value, end=" ")
+
 
 print("Postorder Traversal:")
 postorder_traversal(root)  # Output: 4 5 2 3 1

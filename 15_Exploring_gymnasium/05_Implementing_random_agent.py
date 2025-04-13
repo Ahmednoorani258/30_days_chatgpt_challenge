@@ -37,13 +37,13 @@ env.close()
 #     total_reward = 0
 #     done = False
 #     truncated = False
-    
+
 #     while not (done or truncated):
 #         action = env.action_space.sample()
 #         state, reward, done, truncated, info = env.step(action)
 #         total_reward += reward
 #         env.render()
-    
+
 #     print(f"Episode {episode + 1}: Total Reward = {total_reward}")
 
 # env.close()

@@ -7,7 +7,8 @@ class Task:
     def mark_complete(self):
         self.status = "completed"
         print(f"Task '{self.title}' marked as completed.")
-        
+
+
 class ToDoList:
     def __init__(self):
         self.tasks = []
@@ -29,7 +30,10 @@ class ToDoList:
             print("No tasks in the list.")
         else:
             for task in self.tasks:
-                print(f"Title: {task.title}, Description: {task.description}, Status: {task.status}")
+                print(
+                    f"Title: {task.title}, Description: {task.description}, Status: {task.status}"
+                )
+
 
 # Usage
 todo = ToDoList()

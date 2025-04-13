@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Create a DataFrame
-df = pd.read_csv('house_prices.csv')
+df = pd.read_csv("house_prices.csv")
 
 # Display the first few rows
 print(df.head())
@@ -10,7 +10,7 @@ print(df.head())
 print("Missing values:\n", df.isnull().sum())
 
 # Fill missing 'Price' values with the mean
-df['Price'].fillna(df['Price'].mean(), inplace=True)
+df["Price"].fillna(df["Price"].mean(), inplace=True)
 
 # Remove duplicate rows
 df.drop_duplicates(inplace=True)

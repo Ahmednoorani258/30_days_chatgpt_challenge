@@ -24,11 +24,13 @@ Let’s write a script to see the difference in action.
 
 import time
 
+
 def sync_task(name, duration):
     """Simulates a blocking task."""
     print(f"Starting {name}")
     time.sleep(duration)  # Simulates a blocking task (e.g., waiting for a server)
     print(f"Finished {name}")
+
 
 # Run tasks sequentially
 print("Synchronous Execution:")
@@ -44,18 +46,18 @@ sync_task("Task 2", 3)  # Takes 3 seconds
 
 import asyncio
 
+
 async def async_task(name, duration):
     """Simulates a non-blocking task."""
     print(f"Starting {name}")
     await asyncio.sleep(duration)  # Non-blocking sleep
     print(f"Finished {name}")
 
+
 async def main():
     """Runs multiple async tasks concurrently."""
-    await asyncio.gather(
-        async_task("Task 1", 2),
-        async_task("Task 2", 3)
-    )
+    await asyncio.gather(async_task("Task 1", 2), async_task("Task 2", 3))
+
 
 print("\nAsynchronous Execution:")
 asyncio.run(main())

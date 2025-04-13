@@ -32,11 +32,13 @@
 # Use Case
 # Best for small lists or unsorted data where simplicity is more important than speed.
 
+
 def linear_search(arr, target):
     for i in range(len(arr)):
         if arr[i] == target:
             return i  # Return index if found
     return -1  # Return -1 if not found
+
 
 # Example usage
 my_list = [4, 2, 7, 1, 9, 3]
@@ -49,5 +51,3 @@ if result != -1:
     print(f"Element found at index: {result}")
 else:
     print("Element not found")
-    
-

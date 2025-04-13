@@ -1,14 +1,14 @@
 # 📌 1️⃣ Recursion Fundamentals
 
 """
-Recursion is a powerful problem-solving technique where a function calls itself to break down a problem 
+Recursion is a powerful problem-solving technique where a function calls itself to break down a problem
 into smaller, manageable subproblems. To master recursion, you need to understand two key components:
 
-1. **Base Case**: 
-   - The condition that stops the recursion. Without it, the function would call itself indefinitely 
+1. **Base Case**:
+   - The condition that stops the recursion. Without it, the function would call itself indefinitely
      (infinite recursion), leading to a stack overflow.
 
-2. **Recursive Case**: 
+2. **Recursive Case**:
    - The part of the function where it calls itself with a modified input, moving closer to the base case.
 
 Recursion is like solving a puzzle by reducing it to simpler versions of the same puzzle until it’s trivial to solve.
@@ -31,12 +31,14 @@ For example:
 **Recursive Case**: `n! = n × (n - 1)!`
 """
 
+
 def factorial(n):
     # Base Case
     if n == 0 or n == 1:
         return 1
     # Recursive Case
     return n * factorial(n - 1)
+
 
 # Example usage
 print("Factorial of 5:", factorial(5))  # Output: 120
@@ -80,9 +82,10 @@ F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2, F(4) = 3, F(5) = 5, ...
 
 
 def fibonacci(n):
-    if n==0 or n==1:
+    if n == 0 or n == 1:
         return n
-    return fibonacci(n-1) + fibonacci(n-2)
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 # Example usage
 print("Fibonacci of 5:", fibonacci(5))  # Output: 5
@@ -108,6 +111,7 @@ Binary Search is an efficient algorithm for finding an element in a sorted list 
 **Recursive Case**: Narrow down the search range based on the comparison with the middle element.
 """
 
+
 def binary_search(arr, target, left, right):
     # Base Case: If the range is invalid
     if left > right:
@@ -125,12 +129,15 @@ def binary_search(arr, target, left, right):
     else:
         return binary_search(arr, target, mid + 1, right)
 
+
 # Example usage
 sorted_list = [1, 3, 5, 7, 9, 11]
 target = 7
 result = binary_search(sorted_list, target, 0, len(sorted_list) - 1)
 if result != -1:
-    print(f"Target {target} found at index {result}")  # Output: Target 7 found at index 3
+    print(
+        f"Target {target} found at index {result}"
+    )  # Output: Target 7 found at index 3
 else:
     print(f"Target {target} not found")
 

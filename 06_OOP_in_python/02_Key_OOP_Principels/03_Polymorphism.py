@@ -1,13 +1,13 @@
 # 📌 Polymorphism
 """
-Polymorphism means “many forms.” It allows objects of different classes to be treated as instances of a common parent class, 
+Polymorphism means “many forms.” It allows objects of different classes to be treated as instances of a common parent class,
 often by overriding methods.
 
 ### Key Points:
 
 1. **Polymorphism**:
    - The ability of different objects to respond to the same method call in different ways.
-   
+
 2. **Method Overriding**:
    - A child class provides a specific implementation of a method that is already defined in its parent class.
 
@@ -15,11 +15,13 @@ often by overriding methods.
 The `Animal` class defines a generic `speak()` method, which is overridden by the `Dog` and `Cat` classes to provide specific behaviors.
 """
 
+
 # Parent Class
 class Animal:
     def speak(self):
         """Generic method to simulate an animal making a sound."""
         print("Animal is making a sound.")
+
 
 # Child Class: Dog
 class Dog(Animal):
@@ -27,11 +29,13 @@ class Dog(Animal):
         """Specific implementation for Dog."""
         print("Dog is barking.")
 
+
 # Child Class: Cat
 class Cat(Animal):
     def speak(self):
         """Specific implementation for Cat."""
         print("Cat is meowing.")
+
 
 # Usage Example
 if __name__ == "__main__":

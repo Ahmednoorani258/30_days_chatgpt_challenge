@@ -11,6 +11,7 @@ def find_max_min(lst):
             min_val = num
     return max_val, min_val
 
+
 # Example
 numbers = [4, 2, 7, 1, 9, 3]
 max_num, min_num = find_max_min(numbers)

@@ -39,10 +39,11 @@ def bubble_sort(arr):
         for j in range(0, n - i - 1):
             # Traverse the list from 0 to n-i-1
             if arr[j] > arr[j + 1]:
-            # Swap if the element found is greater than the next element
+                # Swap if the element found is greater than the next element
                 # Swap elements
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]  # Swap elements
     return arr
+
 
 # Example usage
 unsorted_list = [64, 34, 25, 12, 22, 11, 90]

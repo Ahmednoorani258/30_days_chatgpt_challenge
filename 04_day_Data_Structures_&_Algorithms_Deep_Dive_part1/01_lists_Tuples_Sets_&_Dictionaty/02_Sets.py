@@ -9,7 +9,7 @@ unique_numbers = {1, 2, 2, 3, 3, 4}
 
 print(unique_numbers)
 
-# Explanation: 
+# Explanation:
 #     Though duplicates (2 and 3) are in the input, the set becomes {1, 2, 3, 4} because sets only store unique values. Order isn’t guaranteed.
 
 # Example 2: Fruit Set
@@ -19,7 +19,7 @@ fruits = {"apple", "banana", "apple", "cherry"}
 
 print(fruits)
 
-# Explanation: 
+# Explanation:
 #     The duplicate "apple" is removed, resulting in {"apple", "banana", "cherry"}. Sets are useful for eliminating redundancy.
 
 # Example 3: IDs

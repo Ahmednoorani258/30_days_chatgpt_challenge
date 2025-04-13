@@ -30,7 +30,7 @@ if st.button("Run Random Agent"):
             total_reward += reward
         rewards.append(total_reward)
     env.close()
-    
+
     st.write(f"Average Reward: {sum(rewards) / num_episodes}")
     # Plot rewards
     df = pd.DataFrame({"Episode": range(1, num_episodes + 1), "Reward": rewards})

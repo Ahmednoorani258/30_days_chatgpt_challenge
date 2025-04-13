@@ -5,14 +5,20 @@ import torch
 # Step 1: Load the tokenizer and model
 # The tokenizer converts raw text into token IDs that the model can understand.
 # The model is a pre-trained DistilBERT fine-tuned for sentiment analysis (binary classification: positive/negative).
-tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+tokenizer = AutoTokenizer.from_pretrained(
+    "distilbert-base-uncased-finetuned-sst-2-english"
+)
+model = AutoModelForSequenceClassification.from_pretrained(
+    "distilbert-base-uncased-finetuned-sst-2-english"
+)
 
 # Step 2: Tokenize the input text
 # The tokenizer processes the input text and returns a dictionary containing:
 # - 'input_ids': Encoded token IDs for the input text.
 # - 'attention_mask': A mask to distinguish real tokens from padding (useful for batching).
-inputs = tokenizer("AI is not changing the world!", return_tensors="pt")  # 'pt' specifies PyTorch tensors.
+inputs = tokenizer(
+    "AI is not changing the world!", return_tensors="pt"
+)  # 'pt' specifies PyTorch tensors.
 
 # Step 3: Pass the tokenized input to the model
 # The model processes the input and outputs logits (raw scores for each class).
@@ -24,12 +30,16 @@ logits = outputs.logits  # Extract the logits from the model's output.
 # Step 4: Convert logits to probabilities
 # Apply the softmax function to the logits to normalize them into probabilities.
 # Softmax ensures that the scores for all classes sum to 1, making them interpretable as probabilities.
-probabilities = torch.softmax(logits, dim=1)  # dim=1 applies softmax across the class dimension.
+probabilities = torch.softmax(
+    logits, dim=1
+)  # dim=1 applies softmax across the class dimension.
 
 # Step 5: Determine the predicted class
 # Use argmax to find the index of the class with the highest probability.
 # The index corresponds to the predicted class (0 = NEGATIVE, 1 = POSITIVE).
-predicted_class = torch.argmax(probabilities).item()  # Convert the tensor to a Python integer.
+predicted_class = torch.argmax(
+    probabilities
+).item()  # Convert the tensor to a Python integer.
 
 # Step 6: Interpret the result
 # Define the class labels for interpretation.

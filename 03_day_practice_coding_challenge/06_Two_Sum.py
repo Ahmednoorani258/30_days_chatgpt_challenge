@@ -20,31 +20,33 @@
 # 4. If the difference is not in the dictionary, add the current number and its index to the dictionary.
 # 5. If no solution is found, return an empty list.
 
+
 def two_sum(numbers, target):
     """Find indices of two numbers in a list that add up to the target."""
     # Dictionary to store number-to-index mappings
     seen_numbers = {}
-    
+
     # Iterate through the list with index and value
     for index, current_num in enumerate(numbers):
         # Calculate the number needed to reach the target
         complement = target - current_num
-        
+
         # If the complement exists in the dictionary, we found a pair
         if complement in seen_numbers:
             return [seen_numbers[complement], index]
-        
+
         # Otherwise, add the current number and its index
         seen_numbers[current_num] = index
-    
+
     # No pair found after checking all numbers
     return []
 
+
 # Test cases
-print(two_sum([2, 7, 11, 15], 18)) # [1, 2]
-print(two_sum([3, 2, 4], 6)) # [1, 2]
-print(two_sum([3, 3], 6)) # [0, 1]
-print(two_sum([1, 2, 3], 10)) # []
+print(two_sum([2, 7, 11, 15], 18))  # [1, 2]
+print(two_sum([3, 2, 4], 6))  # [1, 2]
+print(two_sum([3, 3], 6))  # [0, 1]
+print(two_sum([1, 2, 3], 10))  # []
 
 # Second Approach:
 
@@ -57,6 +59,7 @@ def two_sum(numbers, target):
             if numbers[i] + numbers[j] == target:
                 return [i, j]
     return []  # No pair found
+
 
 # Pros: Extremely clear—no data structures, just basic loops and addition.
 # Cons: O(n²) time, doesn’t meet the efficiency preference.

@@ -24,6 +24,7 @@ import asyncio
 # Simulate Fetching Data from APIs
 # ----------------------------------------------
 
+
 async def fetch_data(name, delay):
     """
     Simulates fetching data from an API.
@@ -38,9 +39,11 @@ async def fetch_data(name, delay):
     print(f"Fetched {name}")
     return f"Data from {name}"
 
+
 # ----------------------------------------------
 # Main Function to Run Concurrent Tasks
 # ----------------------------------------------
+
 
 async def main():
     """
@@ -49,10 +52,11 @@ async def main():
     # Schedule tasks concurrently using asyncio.create_task()
     task1 = asyncio.create_task(fetch_data("API 1", 2))
     task2 = asyncio.create_task(fetch_data("API 2", 3))
-    
+
     # Wait for all tasks to finish and collect results using asyncio.gather()
     results = await asyncio.gather(task1, task2)
     print("Results:", results)
+
 
 # Run the main coroutine
 asyncio.run(main())

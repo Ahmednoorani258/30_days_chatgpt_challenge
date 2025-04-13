@@ -19,6 +19,7 @@
 # fibonacci(7) → 13 (sequence: 0, 1, 1, 2, 3, 5, 8, 13)
 # fibonacci(-1) → None (negative input is invalid)
 
+
 def fibonacci1(n):
     if n < 0:
         return None
@@ -34,24 +35,29 @@ def fibonacci2(n):
     """Return the n-th Fibonacci number using recursion with a helper parameter."""
     if n < 0:
         return None
+
     def fib_helper(pos):
         if pos == 0:
             return 0
         if pos == 1:
             return 1
         return fib_helper(pos - 1) + fib_helper(pos - 2)
+
     return fib_helper(n)
+
 
 def fibonacci3(n):
     """Return the n-th Fibonacci number using tail recursion."""
     if n < 0:
         return None
+
     def fib_tail(pos, prev=0, curr=1):
         if pos == 0:
             return prev
         if pos == 1:
             return curr
         return fib_tail(pos - 1, curr, prev + curr)
+
     return fib_tail(n)
 
 
@@ -73,8 +79,8 @@ def fibonacci3(n):
 # The tail-recursive approach is the most efficient recursively, but for large n, all suffer from Python’s recursion depth limit (~1000). A true optimization would use iteration or memoization, but since recursion is required, Approach 3 is the best of these.
 
 # Test Cases
-print(fibonacci1(0) )#→ 0
-print(fibonacci2(1) )#→ 1
-print(fibonacci3(5) )#→ 5
-print(fibonacci2(7) )#→ 13
-print(fibonacci3(-1))# → None
+print(fibonacci1(0))  # → 0
+print(fibonacci2(1))  # → 1
+print(fibonacci3(5))  # → 5
+print(fibonacci2(7))  # → 13
+print(fibonacci3(-1))  # → None

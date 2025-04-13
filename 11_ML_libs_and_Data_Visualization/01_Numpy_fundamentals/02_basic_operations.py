@@ -1,4 +1,5 @@
 import numpy as np
+
 # Basic Operations on Arrays
 # NumPy’s strength lies in its ability to perform operations on entire arrays efficiently, thanks to vectorization. Let’s explore some fundamental operations.
 
@@ -69,4 +70,3 @@ print("Max:", max_val, "Min:", min_val)  # e.g., Max: 0.95071431 Min: 0.15601864
 # np.std(): Measures variability (how spread out the values are).
 # np.max() and np.min(): Find the largest and smallest values.
 # Why Vectorization?: These operations process the entire array in one go, avoiding slow Python loops.
-

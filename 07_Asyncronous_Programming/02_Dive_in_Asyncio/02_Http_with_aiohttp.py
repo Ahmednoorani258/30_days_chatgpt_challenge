@@ -2,7 +2,7 @@
 
 """
 ### Objective:
-Learn how to make asynchronous HTTP requests using the `aiohttp` library. This allows you to perform non-blocking API calls, 
+Learn how to make asynchronous HTTP requests using the `aiohttp` library. This allows you to perform non-blocking API calls,
 making it ideal for fetching data from multiple URLs concurrently.
 
 ### Setup:
@@ -36,6 +36,7 @@ import asyncio
 # Async Function to Fetch Data from a URL
 # ----------------------------------------------
 
+
 async def fetch_url(url):
     """
     Fetches data from the given URL asynchronously.
@@ -48,9 +49,11 @@ async def fetch_url(url):
         async with session.get(url) as response:
             return await response.json()
 
+
 # ----------------------------------------------
 # Main Function to Fetch and Process Data
 # ----------------------------------------------
+
 
 async def main():
     """
@@ -59,6 +62,7 @@ async def main():
     url = "https://jsonplaceholder.typicode.com/posts/1"
     data = await fetch_url(url)
     print("Title:", data["title"])
+
 
 # Run the main coroutine
 asyncio.run(main())
@@ -94,6 +98,7 @@ Let’s compare the performance of `aiohttp` with the synchronous `requests` lib
 import requests
 import time
 
+
 def fetch_url_sync(url):
     """
     Fetches data from the given URL synchronously.
@@ -104,6 +109,7 @@ def fetch_url_sync(url):
     """
     response = requests.get(url)
     return response.json()
+
 
 # Measure execution time for a synchronous request
 start = time.time()

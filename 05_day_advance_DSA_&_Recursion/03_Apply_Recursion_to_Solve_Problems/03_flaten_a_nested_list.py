@@ -11,10 +11,11 @@ Input: [1, [2, 3], [4, [5, 6]]]
 Output: [1, 2, 3, 4, 5, 6]
 """
 
+
 def flatten_list(nested_list):
     # Initialize an empty list to store the flattened result
     flattened = []
-    
+
     for item in nested_list:
         # Base Case: If the item is not a list, append it to the result
         if not isinstance(item, list):
@@ -22,8 +23,9 @@ def flatten_list(nested_list):
         else:
             # Recursive Case: If the item is a list, recursively flatten it
             flattened.extend(flatten_list(item))
-    
+
     return flattened
+
 
 # Example usage
 nested_list = [1, [2, 3], [4, [5, 6]]]

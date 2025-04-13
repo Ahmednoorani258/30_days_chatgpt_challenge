@@ -1,5 +1,3 @@
-
-
 # to check the output of specific example pls uncomment the code and run it
 # _____________________________________________________________
 
@@ -15,7 +13,7 @@
 # with open('file.txt', 'r') as f:
 #     data = f.read()
 #     print(data)
-    # Work with the file
+# Work with the file
 # File is automatically closed here, even if an error occurs
 
 # open('file.txt', 'r') is a context manager that opens the file.
@@ -100,7 +98,7 @@
 #     print(data1)
 #     print(data2)
 #     # Work with both files
-    
+
 
 # # For dynamic numbers of context managers, use contextlib.ExitStack:
 # from contextlib import ExitStack
@@ -108,10 +106,10 @@
 # files = ['file.txt', 'file.txt', 'file.txt']
 # with ExitStack() as stack:
 #     file_objects = [stack.enter_context(open(f, 'r')) for f in files]
-    
+
 #     # Use file_objects as a list of open files
 #     # ExitStack ensures all contexts are properly exited, even if exceptions occur.
-    
+
 # _____________________________________________________________
 # 2. Advnace (Temporary State Changes)
 # _____________________________________________________________

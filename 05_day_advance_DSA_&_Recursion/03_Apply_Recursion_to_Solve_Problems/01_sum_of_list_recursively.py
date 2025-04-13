@@ -11,13 +11,15 @@ For the list [1, 2, 3, 4]:
 - Sum = 1 + (2 + (3 + (4 + 0))) = 10
 """
 
+
 def recursive_sum(lst):
     # Base Case: If the list is empty, return 0
     if not lst:
         return 0
     # Recursive Case: Add the first element to the sum of the rest of the list
-    
+
     return lst[0] + recursive_sum(lst[1:])
+
 
 # Example usage
 numbers = [1, 2, 3, 4]

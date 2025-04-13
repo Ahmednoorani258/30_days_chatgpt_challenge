@@ -1,4 +1,5 @@
 from datasets import load_dataset
+
 # +_______________________________________________________
 # +_______________________________________________________
 
@@ -24,12 +25,14 @@ from transformers import AutoTokenizer
 # "distilbert-base-uncased" ek pre-trained tokenizer hai jo lowercased text ke liye optimized hai.
 tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 
+
 # Step 2: Ek function define karte hain jo dataset ko tokenize karega
 # Ye function ek example (text) lega aur usko tokenize karega.
 # "padding='max_length'" ka matlab hai ke har input ko ek fixed length tak pad karein.
 # "truncation=True" ka matlab hai ke agar text zyada lamba ho to usko truncate kar dein.
 def tokenize_function(examples):
     return tokenizer(examples["text"], padding="max_length", truncation=True)
+
 
 # Step 3: Dataset ko tokenize karte hain
 # "dataset.map" ka use karte hain har example ko tokenize karne ke liye.

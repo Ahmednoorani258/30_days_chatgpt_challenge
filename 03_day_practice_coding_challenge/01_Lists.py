@@ -1,21 +1,34 @@
 # find the most common element. in the list
 
+
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
-print(most_common([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 5, 5])) # 5
-print(most_common([1, 2, 3, 4, 5, 6, 7, 8, 9])) # 1
-print(most_common([2, 2, 4, 4,])) # 1
-print(most_common([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9])) # 9
+
+print(most_common([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 5, 5]))  # 5
+print(most_common([1, 2, 3, 4, 5, 6, 7, 8, 9]))  # 1
+print(
+    most_common(
+        [
+            2,
+            2,
+            4,
+            4,
+        ]
+    )
+)  # 1
+print(most_common([1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9, 9, 9]))  # 9
 # test with str
-print(most_common(['a', 'b', 'c', 'd', 'e', 'e', 'e', 'f', 'g', 'h', 'i', 'e', 'e'])) # e
-print(most_common(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'])) # a
+print(
+    most_common(["a", "b", "c", "d", "e", "e", "e", "f", "g", "h", "i", "e", "e"])
+)  # e
+print(most_common(["a", "b", "c", "d", "e", "f", "g", "h", "i"]))  # a
 
 
 # Explanation
 # in this function we use predefined functions like set() and max() to find the most common element in the list.
 # set() function is used to remove the duplicate elements from the list.
-# max() function is used to find the maximum element in the list.   
+# max() function is used to find the maximum element in the list.
 # key=lst.count is used to count the number of times the element is repeated in the list.
 # the element which is repeated the most number of times is the most common element in the list.
 # but there is a problem with this function. if there are two elements which are repeated the same number of times then the function will return the first element which is repeated the most number of times.
@@ -24,6 +37,7 @@ print(most_common(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'])) # a
 
 
 # Now writing another custom function to find the most common element in the list.
+
 
 def most_common_element(lst):
     # create a dictionary to store the count of each element in the list.
@@ -41,24 +55,21 @@ def most_common_element(lst):
     # create a list to store the most common elements.
     results = []
     # Iterate through the dictionary and find the element which is repeated the most number of times.
-    for key,value in numbers_count.items():
+    for key, value in numbers_count.items():
         # if the value is equal to the maximum count then return the key.
         if value == max_count:
             # append the key to the list
             results.append(key)
     return results
-        
+
+
 print(most_common_element([1, 2, 2, 3, 2]))  # Output: 2
-print(most_common_element([1, 1, 2, 2]))     # Output: 1 or 2
-print(most_common_element(['a', 'b', 'a']))  # Output: 'a'
-
-
-
-
-
+print(most_common_element([1, 1, 2, 2]))  # Output: 1 or 2
+print(most_common_element(["a", "b", "a"]))  # Output: 'a'
 
 
 # now this function works properly but the issue is that code is too long for this simple task.
+
 
 def most_common_elements(lst):
     numbers_count = {}
@@ -68,11 +79,11 @@ def most_common_elements(lst):
     result = [key for key, value in numbers_count.items() if value == max_count]
     return result
 
+
 # now this function is shorter than the previous function and it works properly.
 print(most_common_elements([1, 2, 2, 3, 2]))  # Output: 2
-print(most_common_elements([1, 1, 2, 2]))     # Output: 1 or 2
-print(most_common_elements(['a', 'b', 'a']))  # Output: 'a'
-
+print(most_common_elements([1, 1, 2, 2]))  # Output: 1 or 2
+print(most_common_elements(["a", "b", "a"]))  # Output: 'a'
 
 
 # so in this case we apply all steps to solve

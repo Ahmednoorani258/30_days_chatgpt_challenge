@@ -49,6 +49,7 @@ import time
 # Async Function to Fetch Data from a URL
 # ----------------------------------------------
 
+
 async def fetch_url(url):
     """
     Fetches the content of the given URL asynchronously.
@@ -61,9 +62,11 @@ async def fetch_url(url):
         async with session.get(url) as response:
             return await response.text()
 
+
 # ----------------------------------------------
 # Main Function to Fetch Data Concurrently
 # ----------------------------------------------
+
 
 async def main():
     """
@@ -84,6 +87,7 @@ async def main():
 
     # Measure and display the total time taken
     print("Time:", time.time() - start)
+
 
 # Run the main coroutine
 if __name__ == "__main__":

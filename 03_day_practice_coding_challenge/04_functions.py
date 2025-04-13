@@ -26,6 +26,7 @@
 # print(factorial(-1))  # Should output: None
 # This question focuses on:
 
+
 def factorial(n):
     if n < 0:
         return None
@@ -36,6 +37,7 @@ def factorial(n):
         for i in range(1, n + 1):
             result *= i
         return result
-    
+
+
 # Test the function with example inputs
 print(factorial(5))  # 120

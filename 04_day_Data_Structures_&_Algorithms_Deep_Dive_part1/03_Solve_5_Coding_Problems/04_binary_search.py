@@ -10,6 +10,7 @@ def binary_search(lst, target):
             right = mid - 1
     return -1
 
+
 # Example
 sorted_list = [1, 2, 3, 4, 5, 6, 7]
 target = 4

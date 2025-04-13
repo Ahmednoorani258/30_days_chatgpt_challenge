@@ -13,11 +13,9 @@ grocery_list.append("bread")
 
 print(grocery_list)
 
-# Explanation: 
-    
+# Explanation:
+
 #     This list stores a collection of grocery items in a specific order. You can modify it, e.g., append "bread" with grocery_list.append("bread"), making it ["apples", "bananas", "milk", "bread"].
-
-
 
 
 # Example 2: Numbers
@@ -26,9 +24,8 @@ numbers = [10, 20, 30, 40]
 numbers[1] = 25
 print(numbers)
 
-# Explanation: 
+# Explanation:
 #     A list of integers in sequence. Being mutable, you could change an element, e.g., numbers[1] = 25, resulting in [10, 25, 30, 40].
-
 
 
 # Example 3: Mixed Types

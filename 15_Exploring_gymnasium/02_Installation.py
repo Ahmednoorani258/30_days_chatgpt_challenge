@@ -15,4 +15,5 @@
 # Run this Python code to check:
 
 import gymnasium as gym
+
 print(gym.__version__)  # Should show something like 0.29.0

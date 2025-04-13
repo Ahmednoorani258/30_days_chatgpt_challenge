@@ -20,6 +20,7 @@ import asyncio
 # Async Function to Fetch Data from a URL
 # ----------------------------------------------
 
+
 async def fetch_url(url):
     """
     Fetches the content of the given URL asynchronously.
@@ -32,20 +33,18 @@ async def fetch_url(url):
         async with session.get(url) as response:
             return await response.text()
 
+
 # ----------------------------------------------
 # Main Function to Fetch and Process Data
 # ----------------------------------------------
+
 
 async def main():
     """
     Main coroutine to fetch data from multiple URLs concurrently and process the results.
     """
     # List of URLs to scrape
-    urls = [
-        "https://example.com",
-        "https://example.org",
-        "https://example.net"
-    ]
+    urls = ["https://example.com", "https://example.org", "https://example.net"]
 
     # Create a list of tasks for each URL
     tasks = [fetch_url(url) for url in urls]
@@ -56,6 +55,7 @@ async def main():
     # Process and display the results
     for url, result in zip(urls, results):
         print(f"Fetched {len(result)} characters from {url}")
+
 
 # Run the main coroutine
 if __name__ == "__main__":

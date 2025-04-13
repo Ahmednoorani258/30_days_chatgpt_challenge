@@ -1,7 +1,7 @@
 # 🚀 Day 6: Object-Oriented Programming (OOP) in Python
 """
-Welcome to Day 6 of your Python learning journey! Today, we’re diving into Object-Oriented Programming (OOP), 
-a powerful paradigm that helps you write modular, reusable, and scalable code. OOP is especially important for 
+Welcome to Day 6 of your Python learning journey! Today, we’re diving into Object-Oriented Programming (OOP),
+a powerful paradigm that helps you write modular, reusable, and scalable code. OOP is especially important for
 building complex applications like AI agents and generative AI systems.
 
 ### 📌 Objectives for Today:
@@ -38,6 +38,7 @@ from the car design is an object.
 3. **`__init__` Method**: A special method (constructor) that runs when an object is created, initializing its attributes.
 """
 
+
 # Example: Car Class
 class Car:
     # Class variable (shared by all cars)
@@ -47,11 +48,12 @@ class Car:
     def __init__(self, brand, model, year):
         self.brand = brand  # Instance variable
         self.model = model  # Instance variable
-        self.year = year    # Instance variable
+        self.year = year  # Instance variable
 
     # Method to display car details
     def display_details(self):
         print(f"Brand: {self.brand}, Model: {self.model}, Year: {self.year}")
+
 
 # Creating objects (instances) of the Car class
 car1 = Car("Toyota", "Camry", 2020)

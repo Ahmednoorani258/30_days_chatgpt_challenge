@@ -15,8 +15,8 @@ We use plain language and clear comments to help you understand each step.
 """
 
 # Step 1: Import required libraries
-import numpy as np          # For numerical calculations
-import pandas as pd         # For data handling
+import numpy as np  # For numerical calculations
+import pandas as pd  # For data handling
 import matplotlib.pyplot as plt  # For plotting graphs
 
 # Import the Linear Regression model and a function to split data
@@ -39,18 +39,20 @@ house_sizes = np.random.randint(1000, 3000, 50)
 house_prices = house_sizes * 150 + np.random.randint(-20000, 20000, 50)
 
 # Create a DataFrame to hold the data (for easier viewing and handling)
-df = pd.DataFrame({'Size': house_sizes, 'Price': house_prices})
+df = pd.DataFrame({"Size": house_sizes, "Price": house_prices})
 print("First 5 rows of our data:")
 print(df.head())
 
 # Step 3: Prepare the data for scikit-learn
 # Scikit-learn expects the features (X) to be a 2D array.
-X = df[['Size']]   # Features (house sizes)
-y = df['Price']    # Target (house prices)
+X = df[["Size"]]  # Features (house sizes)
+y = df["Price"]  # Target (house prices)
 
 # Step 4: Split the data into training and testing sets
 # We'll use 80% of the data for training and 20% for testing.
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 print("\nNumber of training samples:", X_train.shape[0])
 print("Number of testing samples:", X_test.shape[0])
 
@@ -69,8 +71,10 @@ print("\nMean Absolute Error (MAE) of the model: {:.2f}".format(mae))
 
 # Step 8: Plot Actual Prices vs. Predicted Prices
 plt.figure(figsize=(8, 6))
-plt.scatter(X_test, y_test, color='blue', label="Actual Prices")  # Plot actual prices
-plt.plot(X_test, predictions, color='red', linewidth=2, label="Predicted Prices")  # Plot predictions as a line
+plt.scatter(X_test, y_test, color="blue", label="Actual Prices")  # Plot actual prices
+plt.plot(
+    X_test, predictions, color="red", linewidth=2, label="Predicted Prices"
+)  # Plot predictions as a line
 plt.xlabel("House Size (sq ft)")
 plt.ylabel("House Price ($)")
 plt.title("House Price Prediction using Linear Regression")

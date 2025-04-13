@@ -17,16 +17,19 @@ import asyncio
 # Simple Async Function
 # ----------------------------------------------
 
+
 async def wait_and_print(message, delay):
     """Wait for a given delay and then print a message."""
     await asyncio.sleep(delay)
     print(message)
+
 
 # Sequential Execution
 async def main_sequential():
     """Run async functions sequentially."""
     await wait_and_print("Hello after 2 seconds", 2)
     await wait_and_print("Hello after another 3 seconds", 3)
+
 
 print("Sequential Execution:")
 asyncio.run(main_sequential())
@@ -47,12 +50,14 @@ Explanation:
 # Concurrent Execution
 # ----------------------------------------------
 
+
 async def main_concurrent():
     """Run async functions concurrently using asyncio.gather()."""
     await asyncio.gather(
         wait_and_print("Hello after 2 seconds", 2),
-        wait_and_print("Hello after 3 seconds", 3)
+        wait_and_print("Hello after 3 seconds", 3),
     )
+
 
 print("\nConcurrent Execution:")
 asyncio.run(main_concurrent())

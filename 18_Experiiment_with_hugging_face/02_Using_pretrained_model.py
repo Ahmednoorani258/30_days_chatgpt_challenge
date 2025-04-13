@@ -30,7 +30,6 @@ summary = summarizer(text, max_length=50, min_length=25, do_sample=False)
 print(summary)
 
 
-
 qa = pipeline("question-answering")
 question = "Where is Hugging Face based?"
 context = "Hugging Face Inc. is based in New York City."

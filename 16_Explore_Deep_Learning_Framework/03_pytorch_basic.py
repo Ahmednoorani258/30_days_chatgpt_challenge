@@ -1,4 +1,4 @@
-### Installing Pytorch 
+### Installing Pytorch
 # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 ### What’s installed?
@@ -8,6 +8,7 @@
 
 
 import torch
+
 print(torch.__version__)
 
 
@@ -18,8 +19,6 @@ print(torch.__version__)
 # Simple: Feels like regular Python with NumPy, plus GPU power.
 # Research-Friendly: Easy to tweak and debug.
 # Analogy: Think of PyTorch as a LEGO set for AI—flexible pieces (tensors) you snap together to build cool models, with a manual (Python) you already know.
-
-
 
 
 # Tensors – The Building Blocks
@@ -60,6 +59,7 @@ print(c)  # tensor([4, 6])
 
 import torch.nn as nn
 
+
 # Define a simple neural network
 class SimpleNet(nn.Module):
     def __init__(self):
@@ -75,6 +75,7 @@ class SimpleNet(nn.Module):
         x = self.relu(x)
         x = self.layer2(x)
         return x
+
 
 # Create the model
 model = SimpleNet()
@@ -121,21 +122,25 @@ import torch  # PyTorch library ko import karte hain, jo deep learning ke liye h
 import torch.nn as nn  # Neural network module, isme layers banane ka samaan hai
 import torch.optim as optim  # Optimizer module, jo model ko behtar banane mein madad karta hai
 
+
 # Model define karte hain - ek chhota sa neural network
 class SimpleNN(nn.Module):  # SimpleNN naam ka model banaya, nn.Module se inherit kiya
     def __init__(self):  # Constructor - yahan model ke parts set karte hain
-        super(SimpleNN, self).__init__()  # Parent class (nn.Module) ko initialize karte hain
+        super(
+            SimpleNN, self
+        ).__init__()  # Parent class (nn.Module) ko initialize karte hain
         # Pehli layer: 784 inputs (28x28 image) se 128 neurons tak
         self.fc1 = nn.Linear(784, 128)  # Fully connected layer 1
         # Doosri layer: 128 neurons se 10 outputs (0-9 digits) tak
-        self.fc2 = nn.Linear(128, 10)   # Fully connected layer 2
-    
+        self.fc2 = nn.Linear(128, 10)  # Fully connected layer 2
+
     def forward(self, x):  # Forward pass - data ka flow yahan define hota hai
         # Pehli layer se guzar kar ReLU activation lagate hain (negatives ko 0 bana deta hai)
         x = torch.relu(self.fc1(x))  # Activation function
         # Doosri layer se guzar kar output banate hain
         x = self.fc2(x)
         return x  # Final output return karte hain (10 scores)
+
 
 # Setup karte hain
 model = SimpleNN()  # Model ka object banaya
@@ -161,7 +166,7 @@ for epoch in range(10):  # 10 baar poora data dekhega (10 epochs)
     optimizer.step()  # Weights ko update karte hain taaki loss kam ho
     # Har epoch ke baad loss print karte hain taaki progress dikhe
     print(f"Epoch {epoch+1}, Loss: {loss.item():.4f}")
-    
+
 
 # Explanation
 # Model: Two layers—fc1 maps 784 inputs to 128 hidden units, fc2 maps 128 to 10 outputs. ReLU adds nonlinearity.
@@ -169,4 +174,3 @@ for epoch in range(10):  # 10 baar poora data dekhega (10 epochs)
 # Loss: CrossEntropyLoss combines softmax and loss calculation.
 # Loop: Runs 10 times, updating weights each epoch.
 # Output: You’ll see the loss decrease as the model learns!
-

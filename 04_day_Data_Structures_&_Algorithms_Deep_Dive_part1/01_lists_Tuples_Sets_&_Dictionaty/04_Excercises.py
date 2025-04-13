@@ -15,10 +15,12 @@ for item in my_list:
 most_frequent = max(frequency, key=frequency.get)
 
 print(f"List: {my_list}")
-print(f"Most frequent element: {most_frequent} (appears {frequency[most_frequent]} times)")
+print(
+    f"Most frequent element: {most_frequent} (appears {frequency[most_frequent]} times)"
+)
 
 # Explanation:
-#     This program counts how often each element appears in the list using a dictionary. 
+#     This program counts how often each element appears in the list using a dictionary.
 #     The 'max' function with 'key=frequency.get' finds the element with the highest count.
 
 # Program 2: Convert a List into a Set to Remove Duplicates
@@ -33,7 +35,7 @@ print(f"Original list: {original_list}")
 print(f"Set with duplicates removed: {unique_set}")
 
 # Explanation:
-#     A set automatically removes duplicates because it only stores unique elements. 
+#     A set automatically removes duplicates because it only stores unique elements.
 #     Converting the list to a set eliminates redundancy, though the order may not be preserved.
 
 # Program 3: Merge Two Dictionaries
@@ -53,6 +55,6 @@ print(f"Merged dictionary: {merged_dict}")
 # merged_dict = {**dict1, **dict2}
 
 # Explanation:
-#     The '|' operator merges two dictionaries into one. If there are duplicate keys, 
-#     the value from the second dictionary overwrites the first. The alternative unpacking 
+#     The '|' operator merges two dictionaries into one. If there are duplicate keys,
+#     the value from the second dictionary overwrites the first. The alternative unpacking
 #     method (commented) achieves the same result and works in older Python versions.

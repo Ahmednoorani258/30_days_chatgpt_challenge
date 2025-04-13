@@ -4,14 +4,16 @@ class Book:
         self.author = author
         self.is_borrowed = False
 
+
 class Library:
     def __init__(self):
         self.books = []
+
     # Add methods: add_book, borrow_book, return_book
-    
+
     def add_books(self, book):
         self.books.append(book)
-    
+
     def borrow_book(self, title):
         for book in self.books:
             if book.title == title and not book.is_borrowed:
@@ -19,7 +21,7 @@ class Library:
                 print(f"Book '{title}' borrowed.")
                 return
         print(f"Book '{title}' not found or already borrowed.")
-    
+
     def return_book(self, title):
         for book in self.books:
             if book.title == title and book.is_borrowed:
@@ -27,13 +29,16 @@ class Library:
                 print(f"Book '{title}' returned.")
                 return
         print(f"Book '{title}' not found or not borrowed.")
-    
+
     def display_books(self):
         if not self.books:
             print("No books in the library.")
         else:
             for book in self.books:
-                print(f"Title: {book.title}, Author: {book.author}, Borrowed: {book.is_borrowed}")
+                print(
+                    f"Title: {book.title}, Author: {book.author}, Borrowed: {book.is_borrowed}"
+                )
+
 
 # Usage
 library = Library()

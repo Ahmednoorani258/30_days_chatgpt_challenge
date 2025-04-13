@@ -25,12 +25,7 @@ Graphs can be represented in two common ways:
 # Example graph:
 # Nodes: 0, 1, 2, 3
 # Edges: 0-1, 0-2, 1-3
-graph = {
-    0: [1, 2],
-    1: [0, 3],
-    2: [0],
-    3: [1]
-}
+graph = {0: [1, 2], 1: [0, 3], 2: [0], 3: [1]}
 
 """
 Adjacency List Representation:
@@ -66,7 +61,7 @@ graph_matrix = [
     [0, 1, 1, 0],  # A
     [1, 0, 0, 1],  # B
     [1, 0, 0, 0],  # C
-    [0, 1, 0, 0]   # D
+    [0, 1, 0, 0],  # D
 ]
 
 """
@@ -98,17 +93,11 @@ Since it’s undirected, each edge goes both ways (e.g., 0-1 means 0 is connecte
 """
 
 # Representing the graph as an adjacency list
-graph = {
-    0: [1, 2],
-    1: [0, 3],
-    2: [0],
-    3: [1]
-}
+graph = {0: [1, 2], 1: [0, 3], 2: [0], 3: [1]}
 
 """
 This dictionary is our graph. The key is a node, and the value is a list of its neighbors.
 """
-
 
 
 # ----------------------------------------------
@@ -129,26 +118,29 @@ Depth-First Search (DFS) is a graph traversal algorithm that explores as far as 
 4. Recursively visit all unvisited neighbors.
 """
 
+
 def dfs_recursive(graph, node, visited):
     # If the node is already visited, return to avoid cycles
     if node in visited:
         return
-    
+
     # Mark the node as visited
     visited.add(node)
-    
+
     # Process the node (e.g., print it)
     print(node)
-    
+
     # Recursively visit all neighbors
     for neighbor in graph[node]:
         dfs_recursive(graph, neighbor, visited)
+
 
 def dfs(graph, start):
     # Initialize an empty set to track visited nodes
     visited = set()
     # Start the recursive DFS from the given node
     dfs_recursive(graph, start, visited)
+
 
 # Run DFS starting from node 0
 print("DFS Traversal:")
@@ -236,6 +228,7 @@ The nodes are visited in the following order:
 If you want to collect the order of nodes visited during DFS, you can modify the function to append nodes to a list.
 """
 
+
 def dfs_recursive_with_order(graph, node, visited, order):
     if node in visited:
         return
@@ -244,11 +237,13 @@ def dfs_recursive_with_order(graph, node, visited, order):
     for neighbor in graph[node]:
         dfs_recursive_with_order(graph, neighbor, visited, order)
 
+
 def dfs_with_order(graph, start):
     visited = set()
     order = []
     dfs_recursive_with_order(graph, start, visited, order)
     return order
+
 
 # Run DFS and collect the traversal order
 dfs_order = dfs_with_order(graph, 0)

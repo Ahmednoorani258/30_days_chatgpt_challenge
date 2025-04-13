@@ -17,10 +17,11 @@
 
 # First approach
 
+
 def is_prime(n):
-    if n <= 1:# if n is less than or equal to 1, it is not prime
+    if n <= 1:  # if n is less than or equal to 1, it is not prime
         return False
-    if n <= 3:# if n is less than or equal to 3, it is prime
+    if n <= 3:  # if n is less than or equal to 3, it is prime
         return True
     if n % 2 == 0 or n % 3 == 0:
         return False
@@ -32,6 +33,7 @@ def is_prime(n):
             return False
         i += 6
     return True
+
 
 # Test the function with example inputs
 print(is_prime(2))  # True
@@ -46,13 +48,13 @@ print(is_prime(1013))  # True
 # Second approach
 # _____________________________________________________________
 
+
 def is_prime(n):
     # If n is less than 2, it's not prime (covers 1, 0, and negative numbers)
     if n < 2:
         return False
     # Check for divisors from 2 up to the square root of n
-    for i in range(2, int(n ** 0.5) + 1):
+    for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
             return False  # Found a divisor, so n is not prime
     return True  # No divisors found, so n is prime
-

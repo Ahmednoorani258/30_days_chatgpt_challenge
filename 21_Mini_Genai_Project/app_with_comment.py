@@ -1,13 +1,18 @@
 # PyTorch libraries import karte hain jo model banane ke liye zaroori hain
 import torch
+
 # Neural networks banane ke liye module import karte hain
 import torch.nn as nn
+
 # Optimizer ke liye module import karte hain jo model ko train karta hai
 import torch.optim as optim
+
 # MNIST dataset aur transforms ke liye torchvision se import karte hain
 from torchvision import datasets, transforms
+
 # Data ko batches mein load karne ke liye DataLoader import karte hain
 from torch.utils.data import DataLoader
+
 # Generated images ko dikhane ke liye matplotlib import karte hain
 import matplotlib.pyplot as plt
 
@@ -17,9 +22,12 @@ torch.manual_seed(42)
 # Images ko tensor mein convert karne ka transform define karte hain
 transform = transforms.Compose([transforms.ToTensor()])
 # MNIST dataset download aur load karte hain (train=True matlab training data)
-train_dataset = datasets.MNIST(root='./data', train=True, transform=transform, download=True)
+train_dataset = datasets.MNIST(
+    root="./data", train=True, transform=transform, download=True
+)
 # DataLoader banate hain jo data ko 128 ke batches mein deta hai aur shuffle karta hai
 train_loader = DataLoader(train_dataset, batch_size=128, shuffle=True)
+
 
 # VAE class define karte hain jo model ka structure banayega
 class VAE(nn.Module):
@@ -34,7 +42,7 @@ class VAE(nn.Module):
             # ReLU activation function jo negative values ko zero karta hai
             nn.ReLU(),
             # Dusra layer: 256 nodes se 32 nodes tak (16 mean + 16 log variance)
-            nn.Linear(256, 32)
+            nn.Linear(256, 32),
         )
         # Decoder define karte hain jo code se wapas image banayega
         self.decoder = nn.Sequential(
@@ -45,9 +53,9 @@ class VAE(nn.Module):
             # Dusra layer: 256 nodes se 784 pixels tak
             nn.Linear(256, 784),
             # Sigmoid function jo output ko 0 se 1 ke beech rakhta hai
-            nn.Sigmoid()
+            nn.Sigmoid(),
         )
-    
+
     # Reparameterize function jo random sampling karta hai latent space mein
     def reparameterize(self, mu, logvar):
         # Standard deviation calculate karte hain log variance se
@@ -56,7 +64,7 @@ class VAE(nn.Module):
         eps = torch.randn_like(std)
         # Mu aur noise ko combine karke latent vector return karte hain
         return mu + eps * std
-    
+
     # Forward function jo pura model chalata hai
     def forward(self, x):
         # Image ko flatten karte hain (28x28 = 784)
@@ -70,14 +78,16 @@ class VAE(nn.Module):
         # Decoder se reconstructed image aur mu, logvar return karte hain
         return self.decoder(z), mu, logvar
 
+
 # Loss function define karte hain jo model ko train karne mein madad karega
 def vae_loss(recon_x, x, mu, logvar):
     # Reconstruction loss calculate karte hain (original aur reconstructed image ka difference)
-    recon_loss = nn.BCELoss(reduction='sum')(recon_x, x.view(-1, 784))
+    recon_loss = nn.BCELoss(reduction="sum")(recon_x, x.view(-1, 784))
     # KL divergence loss jo latent space ko regularize karta hai
     kl_loss = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
     # Dono losses ko combine karke total loss return karte hain
     return recon_loss + kl_loss
+
 
 # Model ka object banate hain
 model = VAE()
@@ -125,10 +135,10 @@ for i, img in enumerate(generated_images):
     # Grid mein sahi position select karte hain
     ax = axes[i // 5, i % 5]
     # Image ko grayscale mein dikhate hain
-    ax.imshow(img.squeeze(), cmap='gray')
+    ax.imshow(img.squeeze(), cmap="gray")
     # Axis ko hide karte hain taake saaf dikhe
-    ax.axis('off')
+    ax.axis("off")
 # Images ko file mein save karte hain
-plt.savefig('generated_digits.png')
+plt.savefig("generated_digits.png")
 # Images ko screen pe dikhate hain
 plt.show()

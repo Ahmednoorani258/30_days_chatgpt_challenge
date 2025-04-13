@@ -6,15 +6,16 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
 # Step 2: Plotting a Histogram
 # Assuming you have a DataFrame df loaded with the house_prices.csv data, use plt.hist() to create a histogram of the Price column:
 
-df = pd.read_csv('Housing.csv')
+df = pd.read_csv("Housing.csv")
 # Histogram of house prices
-plt.hist(df['price'], bins=50, color='green')
-plt.xlabel('Price')
-plt.ylabel('Frequency')
-plt.title('Distribution of House Prices')
+plt.hist(df["price"], bins=50, color="green")
+plt.xlabel("Price")
+plt.ylabel("Frequency")
+plt.title("Distribution of House Prices")
 plt.show()
 
 

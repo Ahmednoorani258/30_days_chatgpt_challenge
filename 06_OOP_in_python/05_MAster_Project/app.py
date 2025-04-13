@@ -1,12 +1,13 @@
 from abc import ABC, abstractmethod
 
+
 # Abstract Bank Account Class
 class Bank_Account(ABC):
     def __init__(self, account_holder, account_number, balance=0.0):
         self._account_holder = account_holder
         self.account_number = account_number
         self._balance = balance  # 🔥 Private attribute
-    
+
     @abstractmethod
     def calculate_interest(self):
         pass  # Abstract method to be implemented in subclasses
@@ -17,17 +18,17 @@ class Bank_Account(ABC):
             print(f"✅ Deposited {amount}. New balance: {self._balance}")
         else:
             print("❌ Invalid deposit amount.")
-    
+
     def withdraw(self, amount):
         if amount > 0 and amount <= self._balance:
             self._balance -= amount
             print(f"✅ Withdrew {amount}. New balance: {self._balance}")
         else:
             print("❌ Insufficient funds or invalid amount.")
-    
+
     def get_balance(self):  # ✅ Getter method to access private balance
         return self._balance
-    
+
     def display_balance(self):
         print("\n🔹 Account Details 🔹")
         print(f"🏦 Account Holder: {self._account_holder}")
@@ -37,15 +38,18 @@ class Bank_Account(ABC):
         print(f"💵 Interest Earned: ${self.calculate_interest()}")
         print("-" * 30)
 
+
 # Savings Account (Inherits from Bank_Account)
 class SavingsAccount(Bank_Account):
     def calculate_interest(self):
         return self._balance * 0.05  # 5% Interest Rate
 
+
 # Current Account (Inherits from Bank_Account)
 class CurrentAccount(Bank_Account):
     def calculate_interest(self):
         return self._balance * 0.01  # 1% Interest Rate
+
 
 # Employee Class.
 class Employee:
@@ -55,7 +59,7 @@ class Employee:
         self.job_title = job_title
         self.salary = salary
         self.bank_account = bank_account
-    
+
     def display_info(self):
         print("\n🔹 Employee Details 🔹")
         print(f"👤 Name: {self.name}")
@@ -68,9 +72,10 @@ class Employee:
 
     def deposit_to_account(self, amount):
         self.bank_account.deposit(amount)
-        
+
     def withdraw_from_account(self, amount):
         self.bank_account.withdraw(amount)
+
 
 # Manager Class (Inherits from Employee)
 class Manager(Employee):
@@ -82,6 +87,7 @@ class Manager(Employee):
         super().display_info()
         print(f"📂 Department: {self.department}")
         print("-" * 30)
+
 
 # 🔥 Demonstration
 # ✅ Creating Bank Accounts

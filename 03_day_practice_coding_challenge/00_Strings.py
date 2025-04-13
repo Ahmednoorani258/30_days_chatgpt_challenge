@@ -5,6 +5,7 @@
 def Reverse(s):
     return s[::-1]
 
+
 # Explanation
 
 # s[::-1] is a slicing technique that reverses the string.
@@ -15,11 +16,12 @@ def Reverse(s):
 # The step parameter specifies the step size of the slice.
 # In this case, the step size is -1, which means the slice is reversed.
 # Therefore, s[::-1] reverses the string s.
-# For example, if s = "hello", then s[::-1] returns "olleh". 
+# For example, if s = "hello", then s[::-1] returns "olleh".
 
 # _____________________________________________________________
 # more ways to achive same result
 # _____________________________________________________________
+
 
 # Example 1
 def solution(string):
@@ -28,16 +30,19 @@ def solution(string):
     for x in string:
         x = string[letter]
         newstring = newstring + x
-        letter = letter -1 
+        letter = letter - 1
     return newstring
+
 
 # Example 2
 def solution(s):
-    return ''.join(reversed(s))
+    return "".join(reversed(s))
+
 
 # Example 3
 def solution(s):
-    return ''.join(s[i] for i in range(len(s)-1, -1, -1))
+    return "".join(s[i] for i in range(len(s) - 1, -1, -1))
+
 
 # Example 4
 solution = lambda s: s[::-1]

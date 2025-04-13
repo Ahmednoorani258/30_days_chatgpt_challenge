@@ -60,7 +60,9 @@ print("First three columns:\n", first_three_cols)
 
 # Elements greater than 0.5
 greater_than_half = arr[arr > 0.5]
-print("Greater than 0.5:", greater_than_half)  # e.g., [0.95071431 0.73199394 0.59865848]
+print(
+    "Greater than 0.5:", greater_than_half
+)  # e.g., [0.95071431 0.73199394 0.59865848]
 # Elements less than the mean
 mean_val = np.mean(arr)
 less_than_mean = arr[arr < mean_val]

@@ -29,7 +29,9 @@
 from transformers import pipeline
 
 # Load a super-smart emotion-guesser
-classifier = pipeline("text-classification", model="bhadresh-savani/bert-base-uncased-emotion")
+classifier = pipeline(
+    "text-classification", model="bhadresh-savani/bert-base-uncased-emotion"
+)
 
 # Test it with something you might say
 result = classifier("I'm feeling really happy today!")
@@ -55,7 +57,6 @@ print(result)
 # “Bye” → Intent: Goodbye
 
 
-
 #### Step 3 #####
 
 # ✅ Step 3: Picking a Reply
@@ -66,26 +67,27 @@ print(result)
 def get_response(intent):
     # Our cheat sheet of replies
     responses = {
-    "joy": "That’s awesome! 😄",
-    "sadness": "I’m here for you. 💙",
-    "greeting": "Hi there! How can I help?",
-    "goodbye": "See ya later! 👋",
-    "anger": "Let’s chill out together. 🧘",
-    "fear": "It’s okay, take a deep breath. You’re not alone. 🌟",
-    "surprise": "Wow, that’s unexpected! 🤯",
-    "help": "Sure, let me know how I can assist you. 🛠️",
-    "confusion": "I’ll do my best to clarify things for you. 🤔",
-    "gratitude": "You’re welcome! I’m happy to help. 😊",
-    "curiosity": "That’s an interesting question! Let me think... 🤓",
-    "boredom": "Let’s find something fun to do! 🎮",
-    "love": "Aww, that’s so sweet! ❤️",
-    "neutral": "Got it. Let me know if there’s anything else. 🙂",
-    "weather": "I can’t check the weather right now, but it’s always a good day to learn something new! 🌤️",
-    "joke": "Why don’t scientists trust atoms? Because they make up everything! 😂",
-    "unknown": "I’m not sure how to respond to that, but I’m here to help! 🤖"
+        "joy": "That’s awesome! 😄",
+        "sadness": "I’m here for you. 💙",
+        "greeting": "Hi there! How can I help?",
+        "goodbye": "See ya later! 👋",
+        "anger": "Let’s chill out together. 🧘",
+        "fear": "It’s okay, take a deep breath. You’re not alone. 🌟",
+        "surprise": "Wow, that’s unexpected! 🤯",
+        "help": "Sure, let me know how I can assist you. 🛠️",
+        "confusion": "I’ll do my best to clarify things for you. 🤔",
+        "gratitude": "You’re welcome! I’m happy to help. 😊",
+        "curiosity": "That’s an interesting question! Let me think... 🤓",
+        "boredom": "Let’s find something fun to do! 🎮",
+        "love": "Aww, that’s so sweet! ❤️",
+        "neutral": "Got it. Let me know if there’s anything else. 🙂",
+        "weather": "I can’t check the weather right now, but it’s always a good day to learn something new! 🌤️",
+        "joke": "Why don’t scientists trust atoms? Because they make up everything! 😂",
+        "unknown": "I’m not sure how to respond to that, but I’m here to help! 🤖",
     }
     # Pick the reply that matches the intent, or say something else if it’s confused
     return responses.get(intent.lower(), "Hmm, I don’t know what to say!")
+
 
 # Chat with the bot
 you_say = input("What do you want to say? ")

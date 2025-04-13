@@ -26,7 +26,7 @@ from sklearn.datasets import fetch_california_housing
 # Load the dataset
 california = fetch_california_housing()
 df = pd.DataFrame(california.data, columns=california.feature_names)
-df['PRICE'] = california.target
+df["PRICE"] = california.target
 
 # Preview the first 5 rows
 print("First 5 rows of the dataset:")
@@ -49,7 +49,7 @@ print(df.isnull().sum())
 # df.isnull().sum(): Confirms there are no missing values (important for preprocessing).
 
 
-    # Insights
-    # Features: Include MedInc (median income), HouseAge, AveRooms (average number of rooms), etc.
-    # Target (PRICE): Median house value in $100,000s (e.g., 4.526 = $452,600).
-    # No Missing Values: The dataset is clean, so we can proceed without imputation.
+# Insights
+# Features: Include MedInc (median income), HouseAge, AveRooms (average number of rooms), etc.
+# Target (PRICE): Median house value in $100,000s (e.g., 4.526 = $452,600).
+# No Missing Values: The dataset is clean, so we can proceed without imputation.

@@ -25,17 +25,16 @@ import pandas as pd
 
 np.random.seed(42)  # For reproducibility
 
-study_hours = np.random.randint(0, 10, 20 ) # 20 students, 1-10 hours
-exam_scores = study_hours * 9 + np.random.uniform(-10, 10, 20) # Score = 9 * hours + noise
+study_hours = np.random.randint(0, 10, 20)  # 20 students, 1-10 hours
+exam_scores = study_hours * 9 + np.random.uniform(
+    -10, 10, 20
+)  # Score = 9 * hours + noise
 
 # print(study_hours)
 # print(exam_scores)
 
 # Create a DataFrame
-data = pd.DataFrame({
-    'Study_Hours': study_hours,
-    'Exam_Score': exam_scores
-})
+data = pd.DataFrame({"Study_Hours": study_hours, "Exam_Score": exam_scores})
 
 # Check for missing values (none in this case, but good practice)
 print("Missing Values:\n", data.isnull().sum())
@@ -56,8 +55,6 @@ Shows how features (inputs) and targets (outputs) are defined in supervised lear
 """
 
 
-
-
 # _____________________________________________________________
 # Step 3 Model Selection
 # _____________________________________________________________
@@ -69,8 +66,8 @@ Shows how features (inputs) and targets (outputs) are defined in supervised lear
 from sklearn.linear_model import LinearRegression
 
 # Define feature (X) and target (y)
-X = data[['Study_Hours']]  # 2D array for scikit-learn
-y = data['Exam_Score']
+X = data[["Study_Hours"]]  # 2D array for scikit-learn
+y = data["Exam_Score"]
 
 # Initialize the model
 model = LinearRegression()
@@ -95,7 +92,9 @@ Keeps it basic while showing how to instantiate a model.
 from sklearn.model_selection import train_test_split
 
 # Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
 
 # Train the model
 model.fit(X_train, y_train)
@@ -156,11 +155,11 @@ Introduces a key metric (MAE) from the ML pipeline.
 import matplotlib.pyplot as plt
 
 # Scatter plot of actual vs predicted
-plt.scatter(X_test, y_test, color='blue', label='Actual Scores')
-plt.plot(X_test, y_pred, color='red', label='Predicted Scores')
-plt.xlabel('Study Hours')
-plt.ylabel('Exam Score')
-plt.title('Linear Regression: Exam Score Prediction')
+plt.scatter(X_test, y_test, color="blue", label="Actual Scores")
+plt.plot(X_test, y_pred, color="red", label="Predicted Scores")
+plt.xlabel("Study Hours")
+plt.ylabel("Exam Score")
+plt.title("Linear Regression: Exam Score Prediction")
 plt.legend()
 
 # Display in Streamlit (or locally)

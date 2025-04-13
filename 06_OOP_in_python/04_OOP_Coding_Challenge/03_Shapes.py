@@ -1,21 +1,21 @@
 from abc import ABC, abstractmethod
 
+
 class Shape(ABC):
     @abstractmethod
     def area(self):
-        pass  
-    
+        pass
+
     def print_details(self):
         print(f"ClassName: {self.__class__.__name__}, Area: {self.area()}")
-        
+
 
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
-        return 3.14 * self.radius ** 2
-    
+        return 3.14 * self.radius**2
 
 
 class Square(Shape):
@@ -23,8 +23,9 @@ class Square(Shape):
         self.side = side
 
     def area(self):
-        return self.side ** 2
-    
+        return self.side**2
+
+
 class Rectangle(Shape):
     def __init__(self, length, width):
         self.length = length
@@ -32,6 +33,7 @@ class Rectangle(Shape):
 
     def area(self):
         return self.length * self.width
+
 
 shapes = [Circle(5), Square(4), Rectangle(3, 6)]
 

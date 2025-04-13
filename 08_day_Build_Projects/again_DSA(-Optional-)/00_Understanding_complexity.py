@@ -24,14 +24,15 @@
 # Count how many times these operations run as a function of n.
 # Simplify to the dominant term, ignoring constants and lower-order terms.
 # Example: Finding the maximum element in an array:
-    
-    
+
+
 def find_max(arr):
     max_val = arr[0]
     for num in arr:
         if num > max_val:
             max_val = num
     return max_val
+
 
 # Operations: One comparison per element.
 # Count: n comparisons for an array of size n.

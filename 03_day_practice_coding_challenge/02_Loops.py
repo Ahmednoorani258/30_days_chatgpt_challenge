@@ -36,20 +36,21 @@
 # 14
 # FizzBuzz
 
+
 def fizz_buzz(start, end, fizz_num, buzz_num):
     """Prints numbers from start to end, replacing multiples with Fizz, Buzz, or FizzBuzz."""
     for num in range(start, end + 1):
         if num % fizz_num == 0 and num % buzz_num == 0:
             print("FizzBuzz")  # Multiple of both fizz_num and buzz_num
         elif num % fizz_num == 0:
-            print("Fizz")     # Multiple of fizz_num only
+            print("Fizz")  # Multiple of fizz_num only
         elif num % buzz_num == 0:
-            print("Buzz")     # Multiple of buzz_num only
+            print("Buzz")  # Multiple of buzz_num only
         else:
-            print(num)        # No multiples
+            print(num)  # No multiples
+
 
 fizz_buzz(1, 15, 3, 5)
 
 
 # u can try adding input to the function to make it more dynamic
-

@@ -9,7 +9,8 @@ class Rectangle:
     def perimeter(self):
         return 2 * (self.length + self.width)
 
+
 # Test
 rect = Rectangle(5, 3)
-print(f"Area: {rect.area()}")        # Output: Area: 15
+print(f"Area: {rect.area()}")  # Output: Area: 15
 print(f"Perimeter: {rect.perimeter()}")  # Output: Perimeter: 16

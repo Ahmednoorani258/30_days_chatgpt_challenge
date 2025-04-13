@@ -33,7 +33,6 @@ from functools import wraps
 # say_hello()
 
 
-
 # _____________________________________________________________
 # Decorator Example Eith Arguments
 # _____________________________________________________________
@@ -41,7 +40,7 @@ from functools import wraps
 # def func(*a,**k):
 #     print(a)
 #     print(k)
-    
+
 # func(1,2,3,4,5,6,7,8,9,10, name="Alice", age=25)
 # def my_decorator(func):
 #     def wrapper(*args, **kwargs):

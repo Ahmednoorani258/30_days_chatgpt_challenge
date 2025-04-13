@@ -18,7 +18,7 @@
 
 # gen = squares(5)
 # print(next(gen))  # Output: 0
-# print(next(gen))  # Output: 1  
+# print(next(gen))  # Output: 1
 # print(next(gen))  # Output: 4
 # print(next(gen))  # Output: 9
 # print(next(gen))  # Output: 16
@@ -43,15 +43,15 @@
 # for line in read_log('file.txt'):
 #     # Process each line (e.g., count errors, extract data)
 #     print(line)
-    
+
 
 # _____________________________________________________________
 # Generator Expressions
 # _____________________________________________________________
-    
+
 
 # For simple generators, you can use generator expressions, which are like list comprehensions but use parentheses () instead of square brackets []. They’re concise and also lazy.
-    
+
 # evens = (i for i in range(10) if i % 2 == 0)
 # print(next(evens))  # Output: 0
 # print(next(evens))  # Output: 2
@@ -61,7 +61,7 @@
 
 # squares = (x**2 for x in range(5) )
 # print(next(squares))  # Output: 0
-# print(next(squares))  # Output: 1    
+# print(next(squares))  # Output: 1
 # print(next(squares))  # Output: 4
 # print(next(squares))  # Output: 9
 # print(next(squares))  # Output: 16
@@ -82,7 +82,7 @@
 #     yield 2
 #     primes_found = [2]
 #     num = 3
-    
+
 #     while True:
 #         if all(num % p != 0 for p in primes_found):
 #             yield num
@@ -106,7 +106,7 @@
 # # Stopping: Use it in a loop with a condition, e.g., for p in prime_gen: if p > 100: break.
 
 
-                        # (Advanced)
+# (Advanced)
 # _____________________________________________________________
 # 1. yield from: Delegating to Sub-Generators
 # _____________________________________________________________
@@ -123,7 +123,7 @@
 # gen2 = (i for i in range(3, 6))   # Yields: 3, 4, 5
 # for value in chain(gen1, gen2):
 #     print(value)  # Output: 0, 1, 2, 3, 4, 5
-    
+
 # # Benefit: Without yield from, you’d need a nested loop (for x in gen: yield x), but yield from makes it cleaner.
 
 
@@ -193,18 +193,19 @@
 
 # Generators are great for processing streams, such as sensor data or API responses:
 
+
 def data_stream():
     # Simulate a stream of incoming data
     for i in range(100):
         yield i
 
+
 # Usage
 for data in data_stream():
     # Process each data point as it "arrives"
     print(f"Processing {data}")
-    
-    
-    
+
+
 # Summary
 # Generators are lazy iterators that produce values on demand, saving memory and enabling efficient iteration.
 # Creation: Use generator functions with yield or generator expressions (...).

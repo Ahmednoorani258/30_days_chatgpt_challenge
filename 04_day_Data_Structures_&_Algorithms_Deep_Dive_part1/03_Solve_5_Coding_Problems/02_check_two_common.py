@@ -5,6 +5,7 @@ def have_common_elements(lst1, lst2):
             return True
     return False
 
+
 # Example
 list1 = [1, 2, 3, 4]
 list2 = [4, 5, 6]

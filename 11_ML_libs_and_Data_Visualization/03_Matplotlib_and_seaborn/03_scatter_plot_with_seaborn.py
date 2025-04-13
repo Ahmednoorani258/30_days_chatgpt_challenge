@@ -13,10 +13,10 @@ import seaborn as sns
 # Step 2: Plotting a Scatter Plot
 # Use sns.scatterplot() to plot Size against Price:
 
-df = pd.read_csv('Housing.csv')
+df = pd.read_csv("Housing.csv")
 # Scatter plot: Size vs Price
-sns.scatterplot(x='area', y='price', data=df)
-plt.title('House Size vs Price')
+sns.scatterplot(x="area", y="price", data=df)
+plt.title("House Size vs Price")
 plt.show()
 
 

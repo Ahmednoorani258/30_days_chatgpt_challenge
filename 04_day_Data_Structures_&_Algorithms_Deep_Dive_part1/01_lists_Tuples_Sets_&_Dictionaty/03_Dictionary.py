@@ -11,7 +11,7 @@ print(person["name"])
 print(person["age"])
 print(person)
 
-# Explanation: 
+# Explanation:
 #     Keys ("name", "age", "city") map to values ("Obaid", 19, "Lahore"). Access values like person["name"] to get "Obaid".
 
 # Example 2: Prices
@@ -21,7 +21,7 @@ prices = {"apple": 0.5, "banana": 0.25, "orange": 0.75}
 
 print(prices)
 
-# Explanation: 
+# Explanation:
 #     Maps fruit names to their prices. You can update a value, e.g., prices["apple"] = 0.6, or add a new pair like "grape": 1.0.
 
 # Example 3: Grades

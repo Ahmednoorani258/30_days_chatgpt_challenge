@@ -8,13 +8,15 @@ from sklearn.datasets import fetch_california_housing
 
 california = fetch_california_housing()
 df = pd.DataFrame(california.data, columns=california.feature_names)
-df['PRICE'] = california.target
+df["PRICE"] = california.target
 
-X = df.drop('PRICE', axis=1)
-y = df['PRICE']
+X = df.drop("PRICE", axis=1)
+y = df["PRICE"]
 
 # Split into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.5, random_state=42
+)
 
 model = LinearRegression()
 
@@ -33,8 +35,14 @@ print(f"R² Score: {r2:.2f}")
 
 # Scatter plot of actual vs predicted prices
 plt.figure(figsize=(8, 5))
-plt.scatter(y_test, predictions, color='blue', alpha=0.5, label='Predicted vs Actual')
-plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--', lw=2, label='Perfect Prediction')
+plt.scatter(y_test, predictions, color="blue", alpha=0.5, label="Predicted vs Actual")
+plt.plot(
+    [y_test.min(), y_test.max()],
+    [y_test.min(), y_test.max()],
+    "k--",
+    lw=2,
+    label="Perfect Prediction",
+)
 plt.xlabel("Actual Prices ($100,000s)")
 plt.ylabel("Predicted Prices ($100,000s)")
 plt.title("Actual vs Predicted House Prices")

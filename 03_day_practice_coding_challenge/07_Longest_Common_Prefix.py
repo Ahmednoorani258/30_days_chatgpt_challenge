@@ -24,6 +24,7 @@
 # 6. If the character is not present in all the strings, return the prefix.
 # 7. If the loop completes, return the prefix.
 
+
 def longest_common_prefix(strs):
     if not strs:
         return ""
@@ -38,41 +39,43 @@ def longest_common_prefix(strs):
             return prefix
     return prefix
 
+
 # Test cases
-print(longest_common_prefix(["flower", "flow", "flight"])) # "fl"
-print(longest_common_prefix(["dog", "racecar", "car"])) # ""
-print(longest_common_prefix(["interspecies", "interstellar", "interstate"])) # "inter"
-print(longest_common_prefix(["throne", "throne"])) # "throne"
+print(longest_common_prefix(["flower", "flow", "flight"]))  # "fl"
+print(longest_common_prefix(["dog", "racecar", "car"]))  # ""
+print(longest_common_prefix(["interspecies", "interstellar", "interstate"]))  # "inter"
+print(longest_common_prefix(["throne", "throne"]))  # "throne"
 
 
 # this code is working properly but not readable. I will refactor it to make it more readable.
 
 # Refactored code:
 
+
 def longest_common_prefix(strs):
     """Find the longest common prefix among a list of strings."""
     # Handle empty list case
     if not strs:
         return ""
-    
+
     # If only one string, it’s the prefix
     if len(strs) == 1:
         return strs[0]
-    
+
     # Sort the list to compare the most different strings
     strs.sort()
     first = strs[0]  # Shortest prefix candidate after sorting
     last = strs[-1]  # Longest differing string after sorting
     prefix = ""
-    
+
     # Compare characters of the first and last strings
     for i in range(len(first)):
         # If characters match, add to prefix
-        
+
         if i < len(last) and first[i] == last[i]:
             prefix += first[i]
         else:
             # Stop at the first mismatch
             break
-    
+
     return prefix

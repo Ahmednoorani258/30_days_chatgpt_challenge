@@ -7,6 +7,7 @@ def remove_duplicates(lst):
             result.append(item)
     return result
 
+
 # Example
 numbers = [1, 2, 3, 2, 4, 1, 5]
 unique_list = remove_duplicates(numbers)

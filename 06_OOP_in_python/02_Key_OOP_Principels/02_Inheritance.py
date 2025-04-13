@@ -12,15 +12,17 @@ Inheritance allows a class (child) to inherit attributes and methods from anothe
 The `Employee` class inherits from the `Person` class, reusing its attributes and methods while adding its own.
 """
 
+
 # Parent Class
 class Person:
     def __init__(self, name, age):
         self.name = name  # Public attribute
-        self.age = age    # Public attribute
+        self.age = age  # Public attribute
 
     def speak(self):
         """Method to simulate speaking."""
         print(f"{self.name} is speaking.")
+
 
 # Child Class
 class Employee(Person):
@@ -33,6 +35,7 @@ class Employee(Person):
         """Method to simulate working."""
         print(f"{self.name} is working as a {self.job_title}.")
 
+
 # Usage Example
 if __name__ == "__main__":
     # Create an Employee object
@@ -40,7 +43,7 @@ if __name__ == "__main__":
 
     # Call methods from both the parent and child classes
     employee.speak()  # Output: Alice is speaking.
-    employee.work()   # Output: Alice is working as a Software Engineer.
+    employee.work()  # Output: Alice is working as a Software Engineer.
 
 """
 ### Explanation:

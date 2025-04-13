@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-df = pd.read_csv('Housing.csv')
+df = pd.read_csv("Housing.csv")
 # Boxplot: Price by Bedrooms
-sns.boxplot(x='bedrooms', y='price', data=df, palette='Set3')
-plt.title('Price Distribution by Bedrooms')
+sns.boxplot(x="bedrooms", y="price", data=df, palette="Set3")
+plt.title("Price Distribution by Bedrooms")
 plt.show()
 
 # # Scatter plot with a regression line

@@ -54,20 +54,6 @@ print(result)
 # With one line, you get a deep-learning-powered sentiment detector—no need to train anything yourself!
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Task2
 # Mini Task 2: Text Summarization
 # What is Text Summarization?
@@ -107,9 +93,6 @@ print(result)
 # Encoding: Transformer model (e.g., BART) reads the full text, understanding context.
 # Generation: Creates a new, shorter text by “rewriting” key points.
 # Decoding: Turns the model’s output back into readable words.
-
-
-
 
 
 # Detailed Explanation Detailed Breakdown: Why Transformers Shine

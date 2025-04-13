@@ -1,4 +1,3 @@
-
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # PyTorch library ko import karte hain jo tensor operations aur GPU acceleration ke liye use hoti hai
@@ -12,23 +11,31 @@ tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-small")
 # Model ka kaam hai tokenized input ko process karna aur response generate karna
 model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-small")
 
+
 # Step 2: Ek function define karte hain jo chatbot ka reply generate karega
 def generate_reply(user_input):
     # User ke input ko token IDs mein convert karte hain
     # "eos_token" ka matlab hai end-of-sequence token jo model ko batata hai ke input khatam ho gaya
-    input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors="pt")  # 'pt' PyTorch tensors ke liye hai
+    input_ids = tokenizer.encode(
+        user_input + tokenizer.eos_token, return_tensors="pt"
+    )  # 'pt' PyTorch tensors ke liye hai
 
     # Model ko input dete hain aur response generate karte hain
     # "max_length=1000" ka matlab hai ke response ki maximum length 1000 tokens tak ho sakti hai
     # "pad_token_id" padding ke liye use hota hai agar input ki length chhoti ho
-    chat_history_ids = model.generate(input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id)
+    chat_history_ids = model.generate(
+        input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id
+    )
 
     # Generated response ko wapas human-readable text mein decode karte hain
     # "skip_special_tokens=True" ka matlab hai ke special tokens (e.g., <eos>, <pad>) ko remove kar diya jaye
-    response = tokenizer.decode(chat_history_ids[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
+    response = tokenizer.decode(
+        chat_history_ids[:, input_ids.shape[-1] :][0], skip_special_tokens=True
+    )
 
     # Response ko return karte hain
     return response
+
 
 # Step 3: Chatbot ko test karte hain
 # User se input lete hain

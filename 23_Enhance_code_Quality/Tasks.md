@@ -81,7 +81,7 @@ Create a `.flake8` file:
 
 ---
 
-### 5️⃣ Configure Continuous Integration (CI)
+### 5️⃣ Configure Continuous Integration (CI) (Optional)
 Use **GitHub Actions** to run tests, coverage, linting, and type checks on every pull request.
 
 #### Create Workflow File: `.github/workflows/ci.yml`
@@ -132,7 +132,7 @@ Use **GitHub Actions** to run tests, coverage, linting, and type checks on every
 | Integrated `black` for formatting             | ☐         |
 | Integrated `flake8` for linting               | ☐         |
 | Added type annotations and ran `mypy`         | ☐         |
-| Set up GitHub Actions CI for tests and linting | ☐         |
+| Set up GitHub Actions CI for tests and linting | ☐         |(Optional)
 
 ---
 

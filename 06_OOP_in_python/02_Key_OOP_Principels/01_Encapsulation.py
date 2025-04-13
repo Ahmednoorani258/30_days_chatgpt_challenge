@@ -1,6 +1,6 @@
 # 📌 Encapsulation
 """
-Encapsulation means bundling data (attributes) and methods into a single unit (class) and controlling access to that data. 
+Encapsulation means bundling data (attributes) and methods into a single unit (class) and controlling access to that data.
 It protects the internal state of an object by making some attributes private.
 
 ### Key Points:
@@ -15,10 +15,11 @@ The `BankAccount` class demonstrates encapsulation by:
 - Providing public methods (`deposit`, `withdraw`, `get_balance`) to control access to private data.
 """
 
+
 class BankAccount:
     def __init__(self, account_number, balance=0):
         self.account_number = account_number  # Public attribute
-        self.__balance = balance              # Private attribute
+        self.__balance = balance  # Private attribute
 
     def deposit(self, amount):
         """Deposit money into the account."""
@@ -40,14 +41,15 @@ class BankAccount:
         """Public method to access the private balance."""
         return self.__balance
 
+
 # Usage Example
 if __name__ == "__main__":
     # Create a BankAccount object
     account = BankAccount("12345678", 1000)
 
     # Perform operations
-    account.deposit(500)      # Output: Deposited 500. New balance: 1500
-    account.withdraw(200)     # Output: Withdrew 200. New balance: 1300
+    account.deposit(500)  # Output: Deposited 500. New balance: 1500
+    account.withdraw(200)  # Output: Withdrew 200. New balance: 1300
     print(f"Current balance: {account.get_balance()}")  # Output: Current balance: 1300
 
     # Trying to access private attribute directly (will fail)

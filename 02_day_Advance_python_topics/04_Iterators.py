@@ -11,7 +11,7 @@
 # __iter__(): Returns the iterator object itself. This allows the iterator to be used in a for loop or with other functions that expect iterables.
 # __next__(): Returns the next value in the sequence. When there are no more values to return, it raises a StopIteration exception to signal the end of the iteration.
 
-#____________________________________________________________________ 
+# ____________________________________________________________________
 
 # Creating Iterators
 # You can create your own iterators by defining a class that implements the iterator protocol. Let's start with a simple example.
@@ -22,17 +22,17 @@
 # class MyIterator():
 #     def __init__(self):
 #         self.num = 1
-    
+
 #     def __iter__(self):
 #         return self
-    
+
 #     def __next__(self):
 #         if self.num > 5:
 #             raise StopIteration
 #         val = self.num
 #         self.num += 1
 #         return val
-    
+
 # iterator = MyIterator()
 # for num in iterator:
 #     print(num)  # Output: 1, 2, 3, 4, 5
@@ -106,7 +106,7 @@
 # for line in read_large_file('file.txt'):
 #     # Process each line individually
 #     print(line)
-    
+
 #     # Benefit: Only one line is loaded into memory at a time, making it memory-efficient.
 
 # _____________________________________________________________
@@ -159,15 +159,6 @@
 # for page_data in fetch_pages('https://api.example.com/data'):
 #     # Process each page
 #     print(page_data)
-
-
-
-
-
-
-
-
-
 
 
 # Summary

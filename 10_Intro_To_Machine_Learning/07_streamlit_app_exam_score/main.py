@@ -8,31 +8,40 @@ from sklearn.metrics import mean_absolute_error
 
 # Step 1: Set up the app
 st.title("🧠 Student Exam Score Prediction with Linear Regression")
-st.write("""
+st.write(
+    """
 This app demonstrates the machine learning pipeline using linear regression to predict exam scores based on study hours.
 Follow along to see each step in action!
-""")
+"""
+)
 
 # Step 2: Data Generation and Preparation
 st.header("1. Data Generation and Preparation")
-st.write("""
+st.write(
+    """
 We'll generate synthetic data for study hours and exam scores. You can adjust the number of students and the range of study hours.
-""")
+"""
+)
 
 # User inputs for data generation
 num_students = st.slider("Number of Students", min_value=10, max_value=100, value=20)
 
-min_hours = st.number_input("Minimum Study Hours", min_value=1.0, max_value=5.0, value=1.0)
-max_hours = st.number_input("Maximum Study Hours", min_value=5.0, max_value=10.0, value=10.0)
+min_hours = st.number_input(
+    "Minimum Study Hours", min_value=1.0, max_value=5.0, value=1.0
+)
+max_hours = st.number_input(
+    "Maximum Study Hours", min_value=5.0, max_value=10.0, value=10.0
+)
 
 # Generate synthetic data
 np.random.seed(42)  # For reproducibility
 study_hours = np.random.uniform(min_hours, max_hours, num_students)
-exam_scores = study_hours * 9 + np.random.uniform(-10, 10, num_students)  # Linear relationship with noise
+exam_scores = study_hours * 9 + np.random.uniform(
+    -10, 10, num_students
+)  # Linear relationship with noise
 
 # Create DataFrame
-data = pd.DataFrame({'Study_Hours': study_hours, 'Exam_Score': exam_scores})
-
+data = pd.DataFrame({"Study_Hours": study_hours, "Exam_Score": exam_scores})
 
 
 # Display data preview
@@ -40,26 +49,35 @@ st.write("### Data Preview")
 st.dataframe(data)
 # Step 3: Model Selection
 st.header("2. Model Selection")
-st.write("""
+st.write(
+    """
 We choose **Linear Regression** because it's simple and effective for predicting a continuous value (exam score) based on another (study hours).
-""")
-st.code("from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()", language="python")
+"""
+)
+st.code(
+    "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()",
+    language="python",
+)
 
 # Step 4: Model Training
 st.header("3. Model Training")
-st.write("""
+st.write(
+    """
 We split the data into training and testing sets, then train the model on the training data.
-""")
+"""
+)
 
 # Define features and target
-X = data[['Study_Hours']]
-y = data['Exam_Score']
+X = data[["Study_Hours"]]
+y = data["Exam_Score"]
 
 # Allow user to adjust test size
 test_size = st.slider("Test Size (percentage)", min_value=0.1, max_value=0.5, value=0.2)
 
 # Split data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=test_size, random_state=42
+)
 
 # Train the model
 model = LinearRegression()
@@ -69,13 +87,17 @@ model.fit(X_train, y_train)
 st.write("### Learned Parameters")
 st.write(f"Slope (Coefficient): {model.coef_[0]:.2f}")
 st.write(f"Intercept: {model.intercept_:.2f}")
-st.write("**Interpretation**: The slope indicates how much the exam score increases per additional study hour.")
+st.write(
+    "**Interpretation**: The slope indicates how much the exam score increases per additional study hour."
+)
 
 # Step 5: Model Evaluation
 st.header("4. Model Evaluation")
-st.write("""
+st.write(
+    """
 We evaluate the model using **Mean Absolute Error (MAE)**, which measures the average prediction error.
-""")
+"""
+)
 
 # Make predictions
 y_pred = model.predict(X_test)
@@ -85,7 +107,8 @@ mae = mean_absolute_error(y_test, y_pred)
 # explaination of mae dropdown menu arrow with streamlit
 
 expand = st.expander("MAE Explanation")
-expand.write("""
+expand.write(
+    """
             Let me explain the line of code mae = mean_absolute_error(y_test, y_pred) in a clear and straightforward way.
 
 What Does This Code Do?
@@ -244,25 +267,30 @@ Fair Evaluation: It treats all errors equally by using absolute values, making i
 Model Performance: It helps you see how close your model’s predictions are to reality.
 In Summary
 The line mae = mean_absolute_error(y_test, y_pred) is a simple way to measure the average error of a regression model by calculating the mean of the absolute differences between actual values (y_test) and predicted values (y_pred). It’s a handy tool for checking how well your model is doing!
-            """)
+            """
+)
 # expand.title("MAE Explanation")
 
 st.write(f"### Mean Absolute Error (MAE): {mae:.2f}")
-st.write("**Interpretation**: On average, the model's predictions are off by this many points.")
+st.write(
+    "**Interpretation**: On average, the model's predictions are off by this many points."
+)
 
 # Step 6: Visualize Results
 st.header("5. Visualize Results")
-st.write("""
+st.write(
+    """
 The scatter plot shows actual exam scores (blue dots) vs. predicted scores (red line).
-""")
+"""
+)
 
 # Create plot
 fig, ax = plt.subplots()
-ax.scatter(X_test, y_test, color='blue', label='Actual Scores')
-ax.plot(X_test, y_pred, color='red', label='Predicted Scores')
-ax.set_xlabel('Study Hours')
-ax.set_ylabel('Exam Score')
-ax.set_title('Linear Regression: Exam Score Prediction')
+ax.scatter(X_test, y_test, color="blue", label="Actual Scores")
+ax.plot(X_test, y_pred, color="red", label="Predicted Scores")
+ax.set_xlabel("Study Hours")
+ax.set_ylabel("Exam Score")
+ax.set_title("Linear Regression: Exam Score Prediction")
 ax.legend()
 
 # Display plot
@@ -270,10 +298,12 @@ st.pyplot(fig)
 
 # Step 7: Conclusion and Next Steps
 st.header("6. Conclusion")
-st.write("""
+st.write(
+    """
 - **What We Did**: Generated data, trained a linear regression model, evaluated it, and visualized the results.
 - **Key Takeaway**: Linear regression can effectively model linear relationships, but real-world data may require more complex models.
-""")
+"""
+)
 
 # Optional: Allow users to download the data
 st.write("### Download Data")
@@ -281,5 +311,5 @@ st.download_button(
     label="Download CSV",
     data=data.to_csv(index=False),
     file_name="student_data.csv",
-    mime="text/csv"
+    mime="text/csv",
 )

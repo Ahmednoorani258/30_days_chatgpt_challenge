@@ -1,75 +1,74 @@
 import streamlit as st
 from datastructures import MyList, Stack, Queue, MySet, MyDict
+
 {
-# Define CSS for light and dark modes
-# def get_dark_mode_css():
-#     return """
-#     <style>
-#     .stApp {
-#         background-color: #1E1E1E;
-#         color: #E0E0E0;
-#     }
-#     .sidebar .sidebar-content {
-#         background-color: #2D2D2D;
-#     }
-#     .stButton>button {
-#         background-color: #4CAF50;
-#         color: white;
-#     }
-#     .stTextInput>div>input {
-#         background-color: #333;
-#         color: #E0E0E0;
-#     }
-#     .stNumberInput>div>input {
-#         background-color: #333;
-#         color: #E0E0E0;
-#     }
-#     .stSelectbox>div>div>select {
-#         background-color: #333;
-#         color: #E0E0E0;
-#     }
-#     </style>
-#     """
-
-# def get_light_mode_css():
-#     return """
-#     <style>
-#     .stApp {
-#         background-color: #FFFFFF;
-#         color: #000000;
-#     }
-#     .sidebar .sidebar-content {
-#         background-color: #F0F2F6;
-#     }
-#     .stButton>button {
-#         background-color: #007BFF;
-#         color: white;
-#     }
-#     .stTextInput>div>input {
-#         background-color: #FFFFFF;
-#         color: #000000;
-#     }
-#     .stNumberInput>div>input {
-#         background-color: #FFFFFF;
-#         color: #000000;
-#     }
-#     .stSelectbox>div>div>select {
-#         background-color: #FFFFFF;
-#         color: #000000;
-#     }
-#     </style>
-#     """
-
-# # Initialize theme state
-# if 'dark_mode' not in st.session_state:
-#     st.session_state.dark_mode = False
-# # Apply theme
-# if dark_mode:
-#     st.markdown(get_dark_mode_css(), unsafe_allow_html=True)
-# else:
-#     st.markdown(get_light_mode_css(), unsafe_allow_html=True)
-# dark_mode = st.sidebar.checkbox("Dark Mode", value=st.session_state.dark_mode)
-# st.session_state.dark_mode = dark_mode
+    # Define CSS for light and dark modes
+    # def get_dark_mode_css():
+    #     return """
+    #     <style>
+    #     .stApp {
+    #         background-color: #1E1E1E;
+    #         color: #E0E0E0;
+    #     }
+    #     .sidebar .sidebar-content {
+    #         background-color: #2D2D2D;
+    #     }
+    #     .stButton>button {
+    #         background-color: #4CAF50;
+    #         color: white;
+    #     }
+    #     .stTextInput>div>input {
+    #         background-color: #333;
+    #         color: #E0E0E0;
+    #     }
+    #     .stNumberInput>div>input {
+    #         background-color: #333;
+    #         color: #E0E0E0;
+    #     }
+    #     .stSelectbox>div>div>select {
+    #         background-color: #333;
+    #         color: #E0E0E0;
+    #     }
+    #     </style>
+    #     """
+    # def get_light_mode_css():
+    #     return """
+    #     <style>
+    #     .stApp {
+    #         background-color: #FFFFFF;
+    #         color: #000000;
+    #     }
+    #     .sidebar .sidebar-content {
+    #         background-color: #F0F2F6;
+    #     }
+    #     .stButton>button {
+    #         background-color: #007BFF;
+    #         color: white;
+    #     }
+    #     .stTextInput>div>input {
+    #         background-color: #FFFFFF;
+    #         color: #000000;
+    #     }
+    #     .stNumberInput>div>input {
+    #         background-color: #FFFFFF;
+    #         color: #000000;
+    #     }
+    #     .stSelectbox>div>div>select {
+    #         background-color: #FFFFFF;
+    #         color: #000000;
+    #     }
+    #     </style>
+    #     """
+    # # Initialize theme state
+    # if 'dark_mode' not in st.session_state:
+    #     st.session_state.dark_mode = False
+    # # Apply theme
+    # if dark_mode:
+    #     st.markdown(get_dark_mode_css(), unsafe_allow_html=True)
+    # else:
+    #     st.markdown(get_light_mode_css(), unsafe_allow_html=True)
+    # dark_mode = st.sidebar.checkbox("Dark Mode", value=st.session_state.dark_mode)
+    # st.session_state.dark_mode = dark_mode
 }
 # Sidebar configuration
 st.sidebar.title("Settings")
@@ -79,15 +78,15 @@ st.sidebar.title("Settings")
 st.title("🧪 Data Structure Playground")
 
 # Initialize data structures in session state
-if 'list' not in st.session_state:
+if "list" not in st.session_state:
     st.session_state.list = MyList()
-if 'stack' not in st.session_state:
+if "stack" not in st.session_state:
     st.session_state.stack = Stack()
-if 'queue' not in st.session_state:
+if "queue" not in st.session_state:
     st.session_state.queue = Queue()
-if 'set' not in st.session_state:
+if "set" not in st.session_state:
     st.session_state.set = MySet()
-if 'dict' not in st.session_state:
+if "dict" not in st.session_state:
     st.session_state.dictionary = MyDict()
 
 # Data structure selection in sidebar
@@ -139,7 +138,7 @@ list_code_snippets = {
 # Extends the list by appending elements from another iterable.""",
     "index": """def index(self, value):
     return self.items.index(value) 
-# Returns the index of the first occurrence of `value` in the list."""
+# Returns the index of the first occurrence of `value` in the list.""",
 }
 
 set_code_snippets = {
@@ -180,7 +179,7 @@ set_code_snippets = {
 # Checks if the set is a subset of `other_set`.""",
     "is_superset": """def is_superset(self, other_set):
     return self.items.issuperset(other_set)
-# Checks if the set is a superset of `other_set`."""
+# Checks if the set is a superset of `other_set`.""",
 }
 
 dict_code_snippets = {
@@ -223,18 +222,18 @@ dict_code_snippets = {
 # Updates the dictionary with key-value pairs from `other_dict`.""",
     "setdefault": """def setdefault(self, key, default=None):
     return self.items.setdefault(key, default)
-# Returns the value of `key` if it exists, otherwise sets it to `default`."""
+# Returns the value of `key` if it exists, otherwise sets it to `default`.""",
 }
 
 stack_code_snippets = {
     "push": "def push(self, value):\n    self.items.append(value)",
     "pop": "def pop(self):\n    if not self.is_empty():\n        return self.items.pop()\n    return None",
-    "peek": "def peek(self):\n    if not self.is_empty():\n        return self.items[-1]\n    return None"
+    "peek": "def peek(self):\n    if not self.is_empty():\n        return self.items[-1]\n    return None",
 }
 queue_code_snippets = {
     "enqueue": "def enqueue(self, value):\n    self.items.append(value)",
     "dequeue": "def dequeue(self):\n    if not self.is_empty():\n        return self.items.popleft()\n    return None",
-    "peek": "def peek(self):\n    if not self.is_empty():\n        return self.items[0]\n    return None"
+    "peek": "def peek(self):\n    if not self.is_empty():\n        return self.items[0]\n    return None",
 }
 
 list_complexity = {
@@ -290,7 +289,20 @@ queue_complexity = {"enqueue": "O(1)", "dequeue": "O(1)", "peek": "O(1)"}
 # Method selection and dynamic UI
 if selected_ds == "List":
     ds = st.session_state.list
-    methods = ["append", "insert", "remove", "get","pop", "clear", "count", "reverse", "sort", "extend", "index", "reset"]
+    methods = [
+        "append",
+        "insert",
+        "remove",
+        "get",
+        "pop",
+        "clear",
+        "count",
+        "reverse",
+        "sort",
+        "extend",
+        "index",
+        "reset",
+    ]
     method = st.selectbox("Select Method", methods)
     code_snippets = list_code_snippets
     complexity = list_complexity
@@ -301,11 +313,13 @@ if selected_ds == "List":
             ds.append(value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "insert":
         col1, col2 = st.columns(2)
         with col1:
-            index = st.number_input("Index to insert at:", min_value=0, key="list_index")
+            index = st.number_input(
+                "Index to insert at:", min_value=0, key="list_index"
+            )
         with col2:
             insert_value = st.text_input("Value to insert:", key="list_insert")
         if st.button("Execute"):
@@ -314,7 +328,7 @@ if selected_ds == "List":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Invalid index!")
-    
+
     elif method == "remove":
         remove_value = st.text_input("Value to remove:", key="list_remove")
         if st.button("Execute"):
@@ -332,13 +346,13 @@ if selected_ds == "List":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("List is empty!")
-    
+
     elif method == "clear":
         if st.button("Execute"):
             ds.clear()
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "count":
         count_value = st.text_input("Value to count:", key="list_count")
         if st.button("Execute"):
@@ -346,19 +360,19 @@ if selected_ds == "List":
             st.write(f"Count of {count_value}: {count}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "reverse":
         if st.button("Execute"):
             ds.reverse()
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "sort":
         if st.button("Execute"):
             ds.sort()
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "extend":
         extend_value = st.text_input("Value to extend:", key="list_extend")
         if st.button("Execute"):
@@ -372,7 +386,7 @@ if selected_ds == "List":
             st.write(f"Index of {index_value}: {index}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "get":
         get_index = st.number_input("Index to get:", min_value=0, key="list_get")
         if st.button("Execute"):
@@ -383,7 +397,7 @@ if selected_ds == "List":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Index out of range!")
-    
+
     elif method == "reset":
         if st.button("Execute"):
             st.session_state.list = MyList()
@@ -404,7 +418,7 @@ elif selected_ds == "Stack":
             ds.push(value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "pop":
         if st.button("Execute"):
             result = ds.pop()
@@ -414,7 +428,7 @@ elif selected_ds == "Stack":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Stack is empty!")
-    
+
     elif method == "peek":
         if st.button("Execute"):
             result = ds.peek()
@@ -424,7 +438,7 @@ elif selected_ds == "Stack":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Stack is empty!")
-    
+
     elif method == "reset":
         if st.button("Execute"):
             st.session_state.stack = Stack()
@@ -445,7 +459,7 @@ elif selected_ds == "Queue":
             ds.enqueue(value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "dequeue":
         if st.button("Execute"):
             result = ds.dequeue()
@@ -455,7 +469,7 @@ elif selected_ds == "Queue":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Queue is empty!")
-    
+
     elif method == "peek":
         if st.button("Execute"):
             result = ds.peek()
@@ -465,7 +479,7 @@ elif selected_ds == "Queue":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Queue is empty!")
-    
+
     elif method == "reset":
         if st.button("Execute"):
             st.session_state.queue = Queue()
@@ -476,26 +490,26 @@ elif selected_ds == "Queue":
 elif selected_ds == "Set":
     ds = st.session_state.set
     methods = [
-    "add",  # Adds an element to the set
-    "remove",  # Removes an element from the set
-    "discard",  # Removes an element from the set without raising an error if it doesn't exist
-    "contains",  # Checks if an element exists in the set
-    "clear",  # Removes all elements from the set
-    "pop",  # Removes and returns an arbitrary element from the set
-    "copy",  # Creates a shallow copy of the set
-    "union",  # Returns a new set with all elements from both sets
-    "update",  # Adds elements from another set or iterable
-    "intersection",  # Returns a new set with elements common to both sets
-    "intersection_update",  # Updates the set with the intersection of itself and another
-    "difference",  # Returns a new set with elements in the set but not in another
-    "difference_update",  # Updates the set by removing elements found in another set
-    "symmetric_difference",  # Returns a new set with elements in either set but not in both
-    "symmetric_difference_update",  # Updates the set with the symmetric difference of itself and another
-    "is_subset",  # Checks if the set is a subset of another
-    "is_superset",  # Checks if the set is a superset of another
-    "isdisjoint",  # Checks if two sets have no elements in common
-    "reset"  # Resets the set to an empty state
-]
+        "add",  # Adds an element to the set
+        "remove",  # Removes an element from the set
+        "discard",  # Removes an element from the set without raising an error if it doesn't exist
+        "contains",  # Checks if an element exists in the set
+        "clear",  # Removes all elements from the set
+        "pop",  # Removes and returns an arbitrary element from the set
+        "copy",  # Creates a shallow copy of the set
+        "union",  # Returns a new set with all elements from both sets
+        "update",  # Adds elements from another set or iterable
+        "intersection",  # Returns a new set with elements common to both sets
+        "intersection_update",  # Updates the set with the intersection of itself and another
+        "difference",  # Returns a new set with elements in the set but not in another
+        "difference_update",  # Updates the set by removing elements found in another set
+        "symmetric_difference",  # Returns a new set with elements in either set but not in both
+        "symmetric_difference_update",  # Updates the set with the symmetric difference of itself and another
+        "is_subset",  # Checks if the set is a subset of another
+        "is_superset",  # Checks if the set is a superset of another
+        "isdisjoint",  # Checks if two sets have no elements in common
+        "reset",  # Resets the set to an empty state
+    ]
     method = st.selectbox("Select Method", methods)
     code_snippets = set_code_snippets
     complexity = set_complexity
@@ -506,7 +520,7 @@ elif selected_ds == "Set":
             ds.add(value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "remove":
         remove_value = st.text_input("Value to remove:", key="set_remove")
         if st.button("Execute"):
@@ -515,7 +529,7 @@ elif selected_ds == "Set":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Value not in set!")
-    
+
     elif method == "contains":
         check_value = st.text_input("Value to check:", key="set_contains")
         if st.button("Execute"):
@@ -525,13 +539,13 @@ elif selected_ds == "Set":
                 st.write(f"{check_value} is not in the set")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "clear":
         if st.button("Execute"):
             ds.clear()
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "union":
         other_set = st.text_input("Other Set:", key="set_union")
         if st.button("Execute"):
@@ -539,7 +553,7 @@ elif selected_ds == "Set":
             st.write(f"Union Set: {union_set}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "intersection":
         other_set = st.text_input("Other Set:", key="set_intersection")
         if st.button("Execute"):
@@ -582,56 +596,58 @@ elif selected_ds == "Set":
             st.write(f"Is Disjoint: {is_disjoint}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-            
+
     elif method == "pop":
         if st.button("Execute"):
             popped_value = ds.pop()
             st.write(f"Popped Value: {popped_value}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "discard":
         discard_value = st.text_input("Value to discard:", key="set_discard")
         if st.button("Execute"):
             ds.discard(discard_value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "copy":
         if st.button("Execute"):
             copied_set = ds.copy()
             st.write(f"Copied Set: {copied_set}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "update":
         update_set = st.text_input("Set to update:", key="set_update")
         if st.button("Execute"):
             ds.update(update_set)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "intersection_update":
         update_set = st.text_input("Set to update:", key="set_intersection_update")
         if st.button("Execute"):
             ds.intersection_update(update_set)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "difference_update":
         update_set = st.text_input("Set to update:", key="set_difference_update")
         if st.button("Execute"):
             ds.difference_update(update_set)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "symmetric_difference_update":
-        update_set = st.text_input("Set to update:", key="set_symmetric_difference_update")
+        update_set = st.text_input(
+            "Set to update:", key="set_symmetric_difference_update"
+        )
         if st.button("Execute"):
             ds.symmetric_difference_update(update_set)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "reset":
         if st.button("Execute"):
             st.session_state.set = MySet()
@@ -640,7 +656,9 @@ elif selected_ds == "Set":
     st.write("Current Set State:", ds.get_state())
 
 elif selected_ds == "Dictionary":
-    ds = st.session_state.dictionary  # Ensure the dictionary object is initialized in session_state
+    ds = (
+        st.session_state.dictionary
+    )  # Ensure the dictionary object is initialized in session_state
     methods = [
         "set",  # Sets a key-value pair in the dictionary
         "get",  # Retrieves the value associated with a key
@@ -655,8 +673,12 @@ elif selected_ds == "Dictionary":
         "setdefault",  # Returns the value of a key if it exists, otherwise sets it to a default value
     ]
     method = st.selectbox("Select Method", methods)
-    code_snippets = dict_code_snippets  # Dictionary containing code snippets for each method
-    complexity = dict_complexity  # Dictionary containing time complexities for each method
+    code_snippets = (
+        dict_code_snippets  # Dictionary containing code snippets for each method
+    )
+    complexity = (
+        dict_complexity  # Dictionary containing time complexities for each method
+    )
 
     if method == "set":
         col1, col2 = st.columns(2)
@@ -668,7 +690,7 @@ elif selected_ds == "Dictionary":
             ds.set(key, value)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "get":
         get_key = st.text_input("Key to get:", key="dict_get")
         if st.button("Execute"):
@@ -679,7 +701,7 @@ elif selected_ds == "Dictionary":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Key not found!")
-    
+
     elif method == "remove":
         remove_key = st.text_input("Key to remove:", key="dict_remove")
         if st.button("Execute"):
@@ -688,20 +710,20 @@ elif selected_ds == "Dictionary":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Key not found!")
-    
+
     elif method == "clear":
         if st.button("Execute"):
             ds.clear()
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "keys":
         if st.button("Execute"):
             keys = ds.keys()
             st.write(f"Keys: {keys}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "values":
         if st.button("Execute"):
             values = ds.values()
@@ -714,21 +736,21 @@ elif selected_ds == "Dictionary":
             st.write(f"Items: {items}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "copy":
         if st.button("Execute"):
             copied_dict = ds.copy()
             st.write(f"Copied Dictionary: {copied_dict}")
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "update":
         update_dict = st.text_input("Dictionary to update:", key="dict_update")
         if st.button("Execute"):
             ds.update(update_dict)
             st.code(code_snippets[method], language="python")
             st.write(f"Time Complexity: {complexity[method]}")
-    
+
     elif method == "pop":
         pop_key = st.text_input("Key to pop:", key="dict_pop")
         if st.button("Execute"):
@@ -739,7 +761,7 @@ elif selected_ds == "Dictionary":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Key not found!")
-    
+
     elif method == "popitem":
         if st.button("Execute"):
             result = ds.popitem()
@@ -749,15 +771,17 @@ elif selected_ds == "Dictionary":
                 st.write(f"Time Complexity: {complexity[method]}")
             else:
                 st.error("Dictionary is empty!")
-    
+
     elif method == "reset":
         if st.button("Execute"):
             st.session_state.dict = MyDict()
             st.success("Dictionary reset!")
 
     st.write("Current Dictionary State:", ds.get_state())
-    
+
 
 # Sidebar display of current state
 st.sidebar.subheader("Current State")
-st.sidebar.write(f"{selected_ds} State:", getattr(st.session_state, selected_ds.lower()).get_state())
+st.sidebar.write(
+    f"{selected_ds} State:", getattr(st.session_state, selected_ds.lower()).get_state()
+)

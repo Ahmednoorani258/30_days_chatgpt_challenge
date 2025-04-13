@@ -41,6 +41,7 @@ Sorting algorithms rearrange a list into a specific order (e.g., ascending). Thi
 # Bubble Sort
 # ----------------------------------------------
 
+
 def bubble_sort(arr):
     """
     Sorts an array using the Bubble Sort algorithm.
@@ -56,9 +57,11 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
+
 # ----------------------------------------------
 # Selection Sort
 # ----------------------------------------------
+
 
 def selection_sort(arr):
     """
@@ -77,9 +80,11 @@ def selection_sort(arr):
         arr[i], arr[min_idx] = arr[min_idx], arr[i]
     return arr
 
+
 # ----------------------------------------------
 # Insertion Sort
 # ----------------------------------------------
+
 
 def insertion_sort(arr):
     """
@@ -98,9 +103,11 @@ def insertion_sort(arr):
         arr[j + 1] = key
     return arr
 
+
 # ----------------------------------------------
 # Merge Sort
 # ----------------------------------------------
+
 
 def merge_sort(arr):
     """
@@ -116,6 +123,7 @@ def merge_sort(arr):
     left = merge_sort(arr[:mid])
     right = merge_sort(arr[mid:])
     return merge(left, right)
+
 
 def merge(left, right):
     """
@@ -139,9 +147,11 @@ def merge(left, right):
     result.extend(right[j:])
     return result
 
+
 # ----------------------------------------------
 # Quick Sort
 # ----------------------------------------------
+
 
 def quick_sort(arr, low, high):
     """
@@ -158,6 +168,7 @@ def quick_sort(arr, low, high):
         quick_sort(arr, low, pivot_idx - 1)
         quick_sort(arr, pivot_idx + 1, high)
     return arr
+
 
 def partition(arr, low, high):
     """
