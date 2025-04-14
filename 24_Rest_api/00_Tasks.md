@@ -109,7 +109,7 @@ def test_predict():
 Run tests:
 
 
-pytest tests
+pytest test
 ```
 
 6️⃣ Package Dependencies
