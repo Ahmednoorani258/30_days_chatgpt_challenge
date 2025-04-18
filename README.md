@@ -7,7 +7,7 @@ Welcome to the **30-Day Python & AI Challenge**! This roadmap is designed to hel
 ## 🎯 What You Will Achieve
 
 ### ✅ 1. Become a Python Expert
-- Master advanced Python concepts such as decorators, generators, context managers, and metaclasses.
+- Master advanced Python concepts such as decorators, generators, context manager, and metaclasses.
 - Write optimized, well-structured code following PEP 8 guidelines.
 - Gain expertise in memory management, concurrency, and performance optimization.
 
